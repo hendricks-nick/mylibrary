@@ -1,7 +1,7 @@
 {
-  "name": "kitchen_inventory",
+  "name": "myLibrary",
   "version": "1.0.0",
-  "description": "Second Project for CS313",
+  "description": "Senior Project",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hendricks-nick/kitchen_inventory.git"
+    "url": "git+https://github.com/hendricks-nick/mylibrary.git"
   },
   "author": "Nick Hendricks",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/hendricks-nick/kitchen_inventory/issues"
+    "url": "https://github.com/hendricks-nick/myLibrary/issues"
   },
-  "homepage": "https://github.com/hendricks-nick/kitchen_inventory#readme",
+  "homepage": "https://github.com/hendricks-nick/myLibrary#readme",
   "dependencies": {
     "ejs": "^2.6.2",
     "express": "^4.17.1",

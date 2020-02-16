@@ -1,2 +1,2 @@
-# kitchen_inventory
-Kitchen Inventory using Node.JS and Express
+# myLibrary
+myLibrary using Node.JS and Express
