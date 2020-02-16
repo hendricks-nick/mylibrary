@@ -1,0 +1,95 @@
+body, html {
+  margin:0;
+  padding:0;
+  background-color: #394447;
+  color: white;
+}
+
+.navContainer {
+  display: grid;
+  grid-template-columns: 65px 1fr 1fr 1fr 1fr 65px;
+  grid-template-rows: auto;
+  overflow: hidden;
+}
+
+.navContainer img {
+  height: 200px;
+  width: auto;
+}
+
+.navOptions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  overflow: hidden;
+}
+
+.add {
+  align-content: start;
+  justify-content: start;
+}
+.add img {
+  height: 50px;
+  width: auto;
+}
+.search {
+  align-content: start;
+  justify-content: end;
+}
+.search img {
+  height: 50px;
+  width: auto;
+}
+.bodyOptions {
+  display: grid;
+  grid-template-columns: 65px 1fr 1fr 1fr 1fr 1fr 1fr 65px;
+  grid-template-rows: auto;
+  justify-content: center;
+  align-content: center;
+  overflow: hidden;
+}
+
+.itemForm {
+  display: grid;
+  grid-template-columns: 65px 1fr 1fr 1fr 65px;
+  grid-template-rows: auto;
+  justify-content: center;
+  align-content: center;
+  overflow: hidden;
+}
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #de9732;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #e4ab5a;
+}
+
+/*Adjust for mobile view*/
+@media only screen and (max-width: 600px) {
+  .bodyOptions {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    justify-content: center;
+    align-content: center;
+    overflow: hidden;
+  }
+}
