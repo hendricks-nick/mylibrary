@@ -7,7 +7,21 @@
         <div></div>
         <!-- + Button -->
         <div class="add">
-            <input type="image" src="/img/plus.png" alt="plus" onclick="addItemForm()" >
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button><br>
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-primary">
+                      <input type="radio" name="options" id="option1" autocomplete="off" checked=""> Author
+                    </label>
+                    <label class="btn btn-primary">
+                      <input type="radio" name="options" id="option2" autocomplete="off"> Title
+                    </label>
+                    <label class="btn btn-primary active">
+                      <input type="radio" name="options" id="option3" autocomplete="off"> Keyword
+                    </label>
+                  </div>
+            </form>
         </div>
     </div>
     <div></div>
