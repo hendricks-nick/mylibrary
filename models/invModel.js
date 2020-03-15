@@ -8,21 +8,36 @@ const connectionString = process.env.DATABASE_URL;
 // my-library-2020 db: postgresql-sinuous-65334
 const pool = new Pool({connectionString: connectionString});
 
-function getAll () {
+function getByTitle(title, callback) {
+  console.log("Searching DB by Title for: " + title)
+  // DB query
+  var sql = "SELECT * FROM book INNER JOIN author ON book.author_id = author.author_id WHERE name LIKE '%" + title + "%';";
 
-}
+  // Query to DB
+  pool.query(sql, function(err, db_results) {
+    // If an error occurred...
+    if (err) {
+        console.log("Error in query: " + err);
+        callback(err);
+    }
+    else {// Log this to the console for debugging purposes. Goes to HEROKU logs.
+    console.log(db_results.rows);
 
-function getByName(name, callback) {
-    console.log("Searching DB for: " + name)
-    
+    var results = {
+      success: true,
+      list: db_results.rows
+    };
     callback(null, results);
+  }
+
+  });
 }
 
-function getItemsByType(itemType, callback) {
-  console.log("Made it here. Getting items by: " + itemType);
+function getByAuthor(author, callback) {
+  console.log("Searching DB by Author for: " + author);
   
   // DB query
-  var sql = "SELECT name, qty, other_notes, location_id FROM " + itemType;
+  var sql = "SELECT * FROM author INNER JOIN book ON author.author_id = book.author_id WHERE name LIKE '%" + author + "%';";
 
   // Query to DB
   pool.query(sql, function(err, db_results) {
@@ -44,8 +59,8 @@ function getItemsByType(itemType, callback) {
   }); 
 }
 
-function addItemToDB(name, type, qty, notes, location, callback) {
-  const sql = 'INSERT INTO '+ type +'(name, qty, other_notes, location_id) values($1, $2, $3, $4)';
+function addBookToDB(name, type, qty, notes, location, callback) {
+  const sql = "INSERT INTO book (name, qty, other_notes, location_id) values($1, $2, $3, $4)";
   const values = [name, qty, notes, location];
 
   console.log("DB Query: "+ sql);
@@ -67,8 +82,7 @@ function addItemToDB(name, type, qty, notes, location, callback) {
 }
 
 module.exports = {
-    getAll: getAll,
-    getItemsByType: getItemsByType,
-    getByName: getByName,
-    addItemToDB: addItemToDB
+    getByAuthor: getByAuthor,
+    getByTitle: getByTitle,
+    addBookToDB: addBookToDB
 };
