@@ -11,7 +11,7 @@ const pool = new Pool({connectionString: connectionString});
 function getByTitle(title, callback) {
   console.log("Searching DB by Title for: " + title)
   // DB query
-  var sql = "SELECT * FROM book INNER JOIN author ON book.author_id = author.author_id WHERE name LIKE '%" + title + "%';";
+  var sql = "SELECT * FROM book AS b INNER JOIN author AS a ON b.author_id = a.id WHERE b\exit.name LIKE '%" + title + "%';";
 
   // Query to DB
   pool.query(sql, function(err, db_results) {
@@ -37,7 +37,7 @@ function getByAuthor(author, callback) {
   console.log("Searching DB by Author for: " + author);
   
   // DB query
-  var sql = "SELECT * FROM author INNER JOIN book ON author.author_id = book.author_id WHERE name LIKE '%" + author + "%';";
+  var sql = "SELECT * FROM author AS a INNER JOIN book AS b ON a.id = b.author_id WHERE a.name LIKE '%" + author + "%';";
 
   // Query to DB
   pool.query(sql, function(err, db_results) {
@@ -59,9 +59,11 @@ function getByAuthor(author, callback) {
   }); 
 }
 
-function addBookToDB(name, type, qty, notes, location, callback) {
-  const sql = "INSERT INTO book (name, qty, other_notes, location_id) values($1, $2, $3, $4)";
-  const values = [name, qty, notes, location];
+function addBookToDB(name, desc, cover_url, authorName ,callback) {
+  // Insert Author FIRST - Author name is set to constraint unique, so duplicates will be skipped.
+  const sql = "INSERT INTO author (name) values ($4) ON CONFLICT DO NOTHING;" + 
+              "INSERT INTO book (name, description, cover_url, author_id) values ($1, $2, $3, (SELECT id FROM author WHERE author_name = '" + "$4" + "'));";
+  const values = [name, desc, cover_url, authorName];
 
   console.log("DB Query: "+ sql);
   pool.query(sql, values, function(err, db_results){
