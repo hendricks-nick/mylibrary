@@ -73,9 +73,8 @@ function getBookApi(queryString, queryType) {
     $.get("/apiGet", {queryType: queryType, queryString: queryString}, function(data){
         console.log("API query complete.");
         console.log(data);
+        loadApiResults(data);
     });
-
-    loadApiResults(data);
 }
 
 
