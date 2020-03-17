@@ -16,13 +16,8 @@ function getBookByAPI (req, res) {
     let qString = req.params.queryString;
     
     invModel.getBookByAPI(qType, qString, function(err, results) {
-        if(!err) {
-            console.log("Made it back: " + results);
-            res.json(results);
-        }
-        else {
-            console.log("Error in getBookByAPI - invController: " + err);
-        }
+        console.log("Made it back: " + results);
+        res.json(results);
     });
 }
 
