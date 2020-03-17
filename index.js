@@ -17,7 +17,7 @@ app.set("view engine", "ejs");
 
 // Express routing for pages requests
 app.get("/", invController.getDefault);
-app.get("/apiGet", invController.getBookByAPI);
+app.get("/api", invController.getBookByAPI);
 app.get("/search/:name", invController.getByName);
 app.post("/addItem", invController.addItemToDB);
 

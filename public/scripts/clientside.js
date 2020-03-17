@@ -72,11 +72,27 @@ function getBookApi() {
     console.log("Query Type: " + qType);
     console.log("Query String: " + qString);
 
-    $.get("/apiGet", {queryType: qType, queryString: qString}, function(data){
+    /*$.get("/api", {queryType: qType, queryString: qString}, function(data){
         console.log("API query complete.");
         console.log(data);
         loadApiResults(data);
-    });
+    });*/
+    // API query
+    var urlRequest = "https://www.googleapis.com/books/v1/volumes?q=isbn:9780399590504&key=AIzaSyBxBJ0t5Mb5ktVZY9Px5jYrZLJfrv9RXq8";
+    console.log(urlRequest);
+    
+    // Query to API
+    var xhttp = new XMLHttpRequest();   
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {  
+        var obj = JSON.parse(this.responseText);
+        console.log(obj);
+
+        loadApiResults(obj);
+        }
+    };
+    xhttp.open("GET", urlRequest, true);
+    xhttp.send();
 }
 
 

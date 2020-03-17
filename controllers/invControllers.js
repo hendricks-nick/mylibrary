@@ -15,7 +15,7 @@ function getBookByAPI (req, res) {
     let qType = req.params.queryType;
     let qString = req.params.queryString;
     console.log("Made it to controller.");
-    
+
     invModel.getBookByAPI(qType, qString, function(err, results) {
         console.log("Made it back: " + results);
         res.send(results);
