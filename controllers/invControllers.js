@@ -1,6 +1,12 @@
 // calls on invModel to use functions for connection to Database
 const invModel = require("../models/invModel.js");
 
+
+function getDefault(req, res) {
+    // display index page
+    res.render("pages/index");
+}
+
 /************************************
  * name: getBookByAPI
  * purpose: Get Books from Google Books API
@@ -86,6 +92,7 @@ function addItemToDB (req, res) {
 
 // exports the functions so that they can be access in index.js when required there
 module.exports = {
+    getDefault: getDefault,
     getBookByAPI: getBookByAPI,
     getItemsByType: getItemsByType,
     getByName: getByName,
