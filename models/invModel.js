@@ -91,14 +91,14 @@ function getBookByAPI(qType, qString, callback) {
   
   // API query
   var urlRequest = "https://www.googleapis.com/books/v1/volumes?q=" + qType + ":" + qString + "&key=" + C_KEY;
-
+  console.log(urlRequest);
+  
   // Query to API
   var xhttp = new XMLHttpRequest();   
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {  
      var obj = JSON.parse(this.responseText);
      console.log(obj);
-     
      callback(null, obj);
     }
   };
