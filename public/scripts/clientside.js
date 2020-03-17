@@ -70,12 +70,22 @@ function getBookApi(queryString, queryType) {
     console.log("Query Type: " + queryType);
     console.log("Query String: " + queryString);
 
-    $.get("/apiGet", {queryType: queryType, queryString: queryString}, function(data){
-        console.log("API query complete.");
-        console.log(data);
-    });
+    var urlRequest = "https://www.googleapis.com/books/v1/volumes?q=" + queryType + ":" + queryString + "&key=AIzaSyBxBJ0t5Mb5ktVZY9Px5jYrZLJfrv9RXq8";
 
-    loadApiResults(data);
+    // Query to API
+    var xhttp = new XMLHttpRequest();   
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {  
+       var obj = JSON.parse(this.responseText);
+       console.log(obj);
+       
+       callback(null, obj);
+      }
+    };
+    xhttp.open("GET", urlRequest, true);
+    xhttp.send();
+
+    loadApiResults(obj);
 }
 
 
