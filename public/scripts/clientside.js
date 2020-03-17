@@ -1,61 +1,3 @@
-function getAll() {
-    console.log("Getting All...");   
-}
-
-function backToHome() {
-    $(".bodyOptions").replaceWith(
-        '<div class="bodyOptions">' +
-        '<div></div>' +
-        '<div><input type="image" src="/img/all_btn.png" alt="all" id="all" onclick="getAll()"></div>' +
-        '<div><input type="image" src="/img/meat_btn.png" alt="meat" id="item" onclick="searchByItem(\'meat\')"></div>' +
-        '<div><input type="image" src="/img/produce_btn.png" alt="produce" id="item" onclick="searchByItem(\'produce\')"></div>' +
-        '<div><input type="image" src="/img/dairy_btn.png" alt="dairy" id="item" onclick="searchByItem(\'dairy\')"></div>' +
-        '<div><input type="image" src="/img/grain_btn.png" alt="grains" id="item" onclick="searchByItem(\'grains\')"></div>' +
-        '<div><input type="image" src="/img/other_btn.png" alt="other" id="item" onclick="searchByItem(\'other\')"></div>' +
-        '<div></div>' +
-        '</div>');
-}
-
-function addItemForm () {
-    $(".bodyOptions").replaceWith(
-        '<div class="itemForm">' +
-        '<div></div>' +
-        '<div></div>' +
-        '<div>' +
-        '<form>' +
-            '<h3>Item</h3>' +
-            '<input type="text" id="name" name="name" placeholder="Item Name">' +
-            '<h3>Item Type</h3>' +
-            '<select id="type" name="type" placeholder"Select an item type">' +
-                '<option value="meat">Meat</option>' +
-                '<option value="produce">Produce</option>' +
-                '<option value="dairy">Dairy</option>' +
-                '<option value="grains">Grain</option>' +
-                '<option value="other">Other</option>' +
-            '</select>' +
-            '<h3>Item Quantity</h3>' +
-            '<input type="text" id="quantity" name="quantity" placeholder="Quantity (2 lbs, 3 dozen, etc...)">' +
-            '<h3>Notes</h3>' +
-            '<textarea id="notes" name="notes" placeholder="Add notes here, such as expiration..." rows="10" cols="80"></textarea>' +
-            '<h3>Location</h3>' +
-            '<select id="location" name="location" placeholder="Select the item location..">' +
-                '<option value="1">Pantry</option>' +
-                '<option value="2">Kitchen Fridge</option>' +
-                '<option value="3">Kitchen Freezer</option>' +
-                '<option value="4">Kitchen Cabinets</option>' +
-                '<option value="5">Garage Fridge</option>' +
-                '<option value="6">Garage Freezer</option>' +
-                '<option value="7">Food Storage</option>' +
-            '</select>' +
-            '</form>' +
-            '<input type="image" src="/img/add_btn.png" alt="add" onclick="addItem()"> <input type="image" src="/img/back_btn.png" alt="back" onclick="backToHome()">' +
-        '</div>' +
-        '<div></div>' +
-        '<div></div>' +
-        '</div>');
-
-}
-
 function addItem() {
     console.log("Starting to add item..");
     var type = document.getElementById("type").value;
@@ -119,4 +61,78 @@ function searchByItem(item) {
                 "<div></div>");
         }
     });
+}
+// getters
+
+// gets book data from Google Books via API
+function getBookApi(requestObj) {
+    console.log("Sending API get request..");  
+    
+    let queryType = requestObj.queryType.value;
+    let queryString = requestObj.queryString.value;
+
+    console.log("Query Type: " + queryType);
+    console.log("Query String: " + queryString);
+
+    $.get("/apiGet", {queryType: queryType, queryString: queryString}, function(data){
+        console.log("API query complete.");
+        console.log(data);
+    });
+
+    loadApiResults(data);
+}
+
+
+// gets book data from Database
+function getBookDB() {
+
+}
+
+// setters
+
+// adds book to database
+function setBook() {
+
+}
+
+// adds book to readlist via ID
+function setReadlist() {
+
+}
+
+// adds book and contact to loaned databast table
+function setLoaned() {
+
+}
+
+// loads the home screen
+function loadHome() {
+
+}
+
+// loads the add book screen
+function loadAdd() {
+
+}
+
+// loads the single book view screen
+function loadBook() {
+
+}
+
+// loads the readlist
+function loadReadlist() {
+
+}
+
+// loads search results
+function loadSearch() {
+
+}
+
+// loads API results
+function loadApiResults(results) {
+    console.log("API RESULTS::");
+    console.log(results);
+
 }

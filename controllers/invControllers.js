@@ -2,20 +2,21 @@
 const invModel = require("../models/invModel.js");
 
 /************************************
- * name: GETDEFAULT
- * purpose: renders the default page
+ * name: getBookByAPI
+ * purpose: Get Books from Google Books API
  ************************************/
-function getDefault(req, res) {
-    // display index page
-    res.render("pages/index");
-}
-
-/************************************
- * name: 
- * purpose: 
- ************************************/
-function getAll (req, res) {
-
+function getBookByAPI (req, res) {
+    let qType = req.params.queryType;
+    let qString = req.params.queryString;
+    
+    invModel.getBookByAPI(qType, qString, function(err, results){
+        if(!err) {
+        res.json(results);
+        }
+        else {
+            console.log("Error in getBookByAPI - invController: " + err);
+        }
+    });
 }
 
 /************************************
@@ -85,8 +86,7 @@ function addItemToDB (req, res) {
 
 // exports the functions so that they can be access in index.js when required there
 module.exports = {
-    getDefault: getDefault,
-    getAll: getAll,
+    getBookByAPI: getBookByAPI,
     getItemsByType: getItemsByType,
     getByName: getByName,
     getByLocation: getByLocation,

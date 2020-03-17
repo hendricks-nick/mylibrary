@@ -1,11 +1,14 @@
+// DB URL if needed
+// my-library-2020 db: postgresql-sinuous-65334
+// API Key
+const C_KEY = "AIzaSyBxBJ0t5Mb5ktVZY9Px5jYrZLJfrv9RXq8";
+
 // Generate pool for DB connection
 const { Pool } = require("pg");
 
 //set DB connectionString from Heroku --- Static String below if needed
 const connectionString = process.env.DATABASE_URL;
-// DB URL if needed
-// || 'postgres://ijjuidmmqrirwi:9096a2ef7618b6f1f2dc375f8c6cfc80fb0f53b16697e829113f8197ccb56926@ec2-107-21-216-112.compute-1.amazonaws.com:5432/d51ubhiu0qlh7g?ssl=true';
-// my-library-2020 db: postgresql-sinuous-65334
+
 const pool = new Pool({connectionString: connectionString});
 
 function getByTitle(title, callback) {
@@ -83,8 +86,29 @@ function addBookToDB(name, desc, cover_url, authorName ,callback) {
   }); 
 }
 
+function getBookByAPI(qType, qString, callback) {
+  console.log("Requesting API for books by: " + qType + ":" + qString);
+  
+  // API query
+  var urlRequest = "https://www.googleapis.com/books/v1/volumes?q=" + qType + ":" + qString + "&key=" + C_KEY;
+
+  // Query to API
+  var xhttp = new XMLHttpRequest();   
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {  
+     var obj = JSON.parse(this.responseText);
+     console.log(obj);
+     
+     callback(null, obj);
+    }
+  };
+  xhttp.open("GET", urlRequest, true);
+  xhttp.send();
+}
+
 module.exports = {
     getByAuthor: getByAuthor,
     getByTitle: getByTitle,
-    addBookToDB: addBookToDB
+    addBookToDB: addBookToDB,
+    getBookByAPI: getBookByAPI
 };
