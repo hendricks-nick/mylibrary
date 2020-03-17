@@ -17,7 +17,7 @@ function getBookByAPI (req, res) {
     
     invModel.getBookByAPI(qType, qString, function(err, results) {
         console.log("Made it back: " + results);
-        res.json(results);
+        res.send(results);
     });
 }
 
