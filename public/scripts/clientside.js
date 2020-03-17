@@ -65,12 +65,14 @@ function searchByItem(item) {
 // getters
 
 // gets book data from Google Books via API
-function getBookApi(queryString, queryType) {
+function getBookApi() {
+    var qType = document.getElementById("queryType").value;
+    var qString = document.getElementById("queryString").value;
     console.log("Sending API get request..");  
-    console.log("Query Type: " + queryType);
-    console.log("Query String: " + queryString);
+    console.log("Query Type: " + qType);
+    console.log("Query String: " + qString);
 
-    $.get("/apiGet", {queryType: queryType, queryString: queryString}, function(data){
+    $.get("/apiGet", {queryType: qType, queryString: qString}, function(data){
         console.log("API query complete.");
         console.log(data);
         loadApiResults(data);
