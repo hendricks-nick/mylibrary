@@ -65,12 +65,8 @@ function searchByItem(item) {
 // getters
 
 // gets book data from Google Books via API
-function getBookApi(requestObj) {
+function getBookApi(queryString, queryType) {
     console.log("Sending API get request..");  
-    
-    let queryType = requestObj.queryType.value;
-    let queryString = requestObj.queryString.value;
-
     console.log("Query Type: " + queryType);
     console.log("Query String: " + queryString);
 
