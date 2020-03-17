@@ -131,4 +131,6 @@ function loadApiResults(results) {
     console.log("API RESULTS::");
     console.log(results);
 
+    document.getElementById("bodyContainer").innerHTML = results;
+
 }
