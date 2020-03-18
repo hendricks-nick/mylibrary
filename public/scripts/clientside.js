@@ -149,7 +149,7 @@ function loadApiResults(results) {
     console.log(results);
 
     let bookName = results.items[0].volumeInfo.title;
-    let bookAuthor = results.items[0].volumeInfo.Authors[0];
+    let bookAuthor = results.items[0].volumeInfo.authors[0];
     let bookDescription = results.items[0].volumeInfo.description;
     let bookCover = results.items[0].volumeInfo.imageLinks.thumbnail;
     
