@@ -104,11 +104,13 @@ function getBookDB() {
 // setters
 
 // adds book to database
-function addBook(book) {
-    let name = book.volumeInfo.title;
-    let author = book.volumeInfo.authors[0];
-    let description = book.volumeInfo.description;
-    let cover = book.volumeInfo.imageLinks.thumbnail;
+function addBook(bookJson) {
+    let book = JSON.parse(bookJson);
+
+    let name = book.name;
+    let author = book.authors;
+    let description = book.description;
+    let cover = book.cover;
 
     console.log("Adding book to DB: " + name + ", By " + author);
     $.post("/addBook", {name: name, author: author, description: description, cover: cover}, function(data){
@@ -161,11 +163,12 @@ function loadApiResults(results) {
     let bookDescription = results.items[0].volumeInfo.description;
     let bookCover = results.items[0].volumeInfo.imageLinks.thumbnail;
     
+    let book = JSON.stringify({name: bookName, author: bookAuthor, description: bookDescription, cover: bookCover});
 
     document.getElementById("bodyContainer").innerHTML = 
     '<div class="bookCover"><img src="' + bookCover + '" alt="Book Cover"></div>' +
     '<div><h2>' +  bookName + '</h2>' +
     '<h3>' + bookAuthor + '</h3><br>' +
     '<h4>' + bookDescription + '</h4></div>' + 
-    '<input type="button" value="Add Book" onclick="addBook(' + results.items[0] +')">';
+    '<input type="button" value="Add Book" onclick="addBook(' + book +')">';
 }
