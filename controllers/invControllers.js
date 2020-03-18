@@ -63,7 +63,6 @@ function addBookToDB (req, res) {
     console.log("Book post received:");
     console.log("Name: " + req.params.name);
     console.log("Author: " + req.params.author);
-    console.log("Description: " + req.params.description.substring(0, 20));
     console.log("Cover URL: " + req.params.cover);
 
 
@@ -71,6 +70,8 @@ function addBookToDB (req, res) {
     var author = req.param("author");
     var description = req.param("description");
     var cover = req.param("cover");
+
+    console.log(name + author);
 
     invModel.addBookToDB(name, author, description, cover, function(results){
         res.json(results);
