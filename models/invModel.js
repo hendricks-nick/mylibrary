@@ -11,7 +11,7 @@ const connectionString = process.env.DATABASE_URL;
 const pool = new Pool({connectionString: connectionString});
 
 function getAll (callback) {
-  console.log("Searching DB by Title for: " + title)
+  console.log("Searching DB by Title for: ")
   // DB query
   var sql = "SELECT * FROM book";
 
