@@ -104,7 +104,12 @@ function getBookDB() {
 // setters
 
 // adds book to database
-function addBook(cover, name, author, description) {
+function addBook(book) {
+    let name = book.volumeInfo.title;
+    let author = book.volumeInfo.authors[0];
+    let description = book.volumeInfo.description;
+    let cover = book.volumeInfo.imageLinks.thumbnail;
+
     console.log("Adding book to DB: " + name + ", By " + author);
     $.post("/addBook", {name: name, author: author, description: description, cover: cover}, function(data){
         console.log(data);
@@ -162,5 +167,5 @@ function loadApiResults(results) {
     '<div><h2>' +  bookName + '</h2>' +
     '<h3>' + bookAuthor + '</h3><br>' +
     '<h4>' + bookDescription + '</h4></div>' + 
-    '<input type="button" value="Add Book" onclick="addBook(' + bookCover + ', ' + bookName + ', ' + bookAuthor + ', ' + bookDescription + ')">';
+    '<input type="button" value="Add Book" onclick="addBook(' + results.items[0] +')">';
 }
