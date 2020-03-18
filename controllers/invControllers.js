@@ -60,18 +60,15 @@ function getItemsByType (req, res) {
  * purpose: Adds items to the database
  ************************************/
 function addBookToDB (req, res) {
-    console.log("Book post received:");
-    console.log("Name: " + req.params.name);
-    console.log("Author: " + req.params.author);
-    console.log("Cover URL: " + req.params.cover);
-
-
     var name = req.param("name");
     var author = req.param("author");
     var description = req.param("description");
     var cover = req.param("cover");
 
     console.log(name + author);
+    console.log("Book post received:");
+    console.log("Name: " + name);
+    console.log("Author: " + author);
 
     invModel.addBookToDB(name, author, description, cover, function(results){
         res.json(results);
