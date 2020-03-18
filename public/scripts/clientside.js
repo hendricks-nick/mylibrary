@@ -78,7 +78,7 @@ function getBookApi() {
         loadApiResults(data);
     });*/
     // API query
-    var urlRequest = "https://www.googleapis.com/books/v1/volumes?q=isbn:9780399590504&key=AIzaSyBxBJ0t5Mb5ktVZY9Px5jYrZLJfrv9RXq8";
+    var urlRequest = "https://www.googleapis.com/books/v1/volumes?q=" + qType + ":" + qString + "&key=AIzaSyBxBJ0t5Mb5ktVZY9Px5jYrZLJfrv9RXq8";
     console.log(urlRequest);
     
     // Query to API
