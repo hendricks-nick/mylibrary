@@ -155,7 +155,7 @@ function loadApiResults(results) {
     
 
     document.getElementById("bodyContainer").innerHTML = 
-    '<div><img src="' + bookCover + '" alt="Book Cover"></div>' +
+    '<div class="bookCover"><img src="' + bookCover + '" alt="Book Cover"></div>' +
     '<div><h2>' +  bookName + '</h2><br>' +
     '<h3>' + bookAuthor + '</h3><br><br>' +
     '<h4>' + bookDescription + '</h4></div>';
