@@ -91,15 +91,16 @@ function addBookToDB(name, author, description, cover_url, callback) {
   const sqlBook = "INSERT INTO book (name, description, cover_url, author_id) values (\"" + name + "\", \"" + description + "\", \"" + cover_url + "\", (SELECT id FROM author WHERE author_name = '" + author + "'));";
 
   console.log("DB Query 1: "+ sqlAuthor);
-  pool.query(sqlAuthor, values, function(err, db_results){
+  pool.query(sqlAuthor, function(err, db_results1){
     if (err) {
       console.log("Error in query: " + err);
       callback(err);
     }
     else { // Log this to the console for debugging purposes. Goes to HEROKU logs.
       console.log("Author Added Succesfully.");
+      console.log(db_results1);
       console.log("DB Query 2: "+ sqlBook);
-      pool.query(sqlBook, values, function(err, db_results){
+      pool.query(sqlBook, function(err, db_results){
       if (err) {
         console.log("Error in query: " + err);
         callback(err);
