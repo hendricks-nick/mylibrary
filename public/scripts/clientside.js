@@ -183,7 +183,7 @@ function cleanString (oldString) {
 
     for (var i = 0; i < oldString.length; i++) {
         if (oldString.charAt(i) === "'") {
-            newString += "\\";
+            newString += "'";
         }
         newString += oldString.charAt(i);
     }
