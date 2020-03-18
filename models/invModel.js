@@ -87,8 +87,8 @@ function getByAuthor(author, callback) {
 
 function addBookToDB(name, author, description, cover_url, callback) {
   // Insert Author FIRST - Author name is set to constraint unique, so duplicates will be skipped.
-  const sqlAuthor = "INSERT INTO author (name) values (\"" + author + "\") ON CONFLICT DO NOTHING;";
-  const sqlBook = "INSERT INTO book (name, description, cover_url, author_id) values (\"" + name + "\", \"" + description + "\", \"" + cover_url + "\", (SELECT id FROM author WHERE author_name = '" + author + "'));";
+  const sqlAuthor = "INSERT INTO author (name) values (\'" + author + "\') ON CONFLICT DO NOTHING;";
+  const sqlBook = "INSERT INTO book (name, description, cover_url, author_id) values (\'" + name + "\', \'" + description + "\', \'" + cover_url + "\', (SELECT id FROM author WHERE author_name = '" + author + "'));";
 
   console.log("DB Query 1: "+ sqlAuthor);
   pool.query(sqlAuthor, function(err, db_results1){
