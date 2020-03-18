@@ -130,7 +130,6 @@ function setLoaned() {
 
 // loads the home screen
 function loadHome() {
-
 }
 
 // loads the add book screen

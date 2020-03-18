@@ -1,7 +1,6 @@
 // DB URL if needed
 // my-library-2020 db: postgresql-sinuous-65334
-// API Key
-const C_KEY = "AIzaSyBxBJ0t5Mb5ktVZY9Px5jYrZLJfrv9RXq8";
+
 
 // Generate pool for DB connection
 const { Pool } = require("pg");
@@ -11,6 +10,30 @@ const connectionString = process.env.DATABASE_URL;
 
 const pool = new Pool({connectionString: connectionString});
 
+function getAll (callback) {
+  console.log("Searching DB by Title for: " + title)
+  // DB query
+  var sql = "SELECT * FROM book";
+
+  // Query to DB
+  pool.query(sql, function(err, db_results) {
+    // If an error occurred...
+    if (err) {
+        console.log("Error in query: " + err);
+        callback(err);
+    }
+    else {// Log this to the console for debugging purposes. Goes to HEROKU logs.
+    console.log(db_results.rows);
+
+    var results = {
+      success: true,
+      list: db_results.rows
+    };
+    callback(null, results);
+  }
+
+  });
+}
 function getByTitle(title, callback) {
   console.log("Searching DB by Title for: " + title)
   // DB query
@@ -87,7 +110,8 @@ function addBookToDB(name, author, description, cover_url, callback) {
 }
 
 module.exports = {
-    getByAuthor: getByAuthor,
-    getByTitle: getByTitle,
-    addBookToDB: addBookToDB
+  getAll: getAll,
+  getByAuthor: getByAuthor,
+  getByTitle: getByTitle,
+  addBookToDB: addBookToDB
 };

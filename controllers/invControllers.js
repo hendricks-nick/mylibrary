@@ -77,11 +77,18 @@ function addBookToDB (req, res) {
     });
 }
 
+function getAll() {
+    invModel.getAll(function(results){
+        console.log(results);
+    });
+}
+
 // exports the functions so that they can be access in index.js when required there
 module.exports = {
     getDefault: getDefault,
     getBookByAPI: getBookByAPI,
     getItemsByType: getItemsByType,
     getByName: getByName,
+    getAll: getAll,
     addBookToDB: addBookToDB
 };
