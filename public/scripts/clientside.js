@@ -107,10 +107,12 @@ function getBookDB() {
 function addBook(storageID) {
     let book = JSON.parse(localStorage.getItem(storageID));
 
-    let name = book.name;
-    let author = book.author;
-    let description = book.description;
+    let name = cleanString(book.name);
+    let author = cleanString(book.author);
+    let description = cleanString(book.description);
     let cover = book.cover;
+
+
 
     console.log("Adding book to DB: " + name + ", By " + author);
     $.post("/addBook", {name: name, author: author, description: description, cover: cover}, function(data){
@@ -174,4 +176,17 @@ function loadApiResults(results) {
             '<h4>' + bookDescription + '</h4></div>' + 
             '<input type="button" value="Add Book" onclick="addBook(' + i +')">';
     }
+}
+
+function cleanString (oldString) {
+    var newString = "";
+
+    for (var i = 0; i < oldString.length; i++) {
+        if (oldString.charAt(i) === "'") {
+            newString += "\\";
+        }
+        newString += oldString.charAt(i);
+    }
+    
+    return newString;
 }
