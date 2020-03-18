@@ -87,26 +87,34 @@ function getByAuthor(author, callback) {
 
 function addBookToDB(name, author, description, cover_url, callback) {
   // Insert Author FIRST - Author name is set to constraint unique, so duplicates will be skipped.
-  const sql = "INSERT INTO author (name) values ($4) ON CONFLICT DO NOTHING;" + 
-              "INSERT INTO book (name, description, cover_url, author_id) values ($1, $2, $3, (SELECT id FROM author WHERE author_name = '" + "$4" + "'));";
+  const sqlAuthor = "INSERT INTO author (name) values ($4) ON CONFLICT DO NOTHING;";
+  const sqlBook = "INSERT INTO book (name, description, cover_url, author_id) values ($1, $2, $3, (SELECT id FROM author WHERE author_name = '" + "$4" + "'));";
   const values = [name, description, cover_url, author];
 
-  console.log("DB Query: "+ sql);
-  pool.query(sql, values, function(err, db_results){
+  console.log("DB Query 1: "+ sqlAuthor);
+  pool.query(sqlAuthor, values, function(err, db_results){
     if (err) {
+      console.log("Error in query: " + err);
+      callback(err);
+    }
+    else { // Log this to the console for debugging purposes. Goes to HEROKU logs.
+      console.log("Author Added Succesfully.");
+      console.log("DB Query 2: "+ sqlBook);
+      pool.query(sqlBook, values, function(err, db_results){
+      if (err) {
         console.log("Error in query: " + err);
         callback(err);
-    }
-    else {// Log this to the console for debugging purposes. Goes to HEROKU logs.
-      console.log(db_results.rows);
-
-      var results = {
-        success: true,
-       list: db_results.rows
-      };
-      callback(null, results);
+      }
+      else { // Log this to the console for debugging purposes. Goes to HEROKU logs.
+        console.log(db_results.rows);
+        var results = { success: true, list: db_results.rows };
+        
+        callback(null, results);
+      }
+      }); 
     }
   }); 
+  
 }
 
 module.exports = {
