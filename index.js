@@ -19,7 +19,7 @@ app.set("view engine", "ejs");
 app.get("/", invController.getDefault);
 app.get("/api", invController.getBookByAPI);
 app.get("/search/:name", invController.getByName);
-app.post("/addItem", invController.addItemToDB);
+app.post("/addBook", invController.addBookToDB);
 
 // listening - log to HEROKU logs  
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));

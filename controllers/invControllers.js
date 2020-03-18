@@ -56,33 +56,23 @@ function getItemsByType (req, res) {
 }
 
 /************************************
- * name: GETBYLOCATION
- * purpose: Performs a search by the location
- ************************************/
-function getByLocation (req, res) {
-
-}
-
-/************************************
  * name: setADDITEM
  * purpose: Adds items to the database
  ************************************/
-function addItemToDB (req, res) {
-    console.log("Form posted received:");
+function addBookToDB (req, res) {
+    console.log("Book post received:");
     console.log("Name: " + req.params.name);
-    console.log("Type: " + req.params.type);
-    console.log("Quantity: " + req.params.qty);
-    console.log("Notes: " + req.params.notes);
-    console.log("Location: " + req.params.location);
+    console.log("Author: " + req.params.author);
+    console.log("Description: " + req.params.description.substring(0, 20));
+    console.log("Cover URL: " + req.params.cover);
 
 
     var name = req.param("name");
-    var type = req.param("type");
-    var qty = req.param("qty");
-    var notes = req.param("notes");
-    var location = req.param("location");
+    var author = req.param("author");
+    var description = req.param("description");
+    var cover = req.param("cover");
 
-    invModel.addItemToDB(name, type, qty, notes, location, function(results){
+    invModel.addBookToDB(name, author, description, cover, function(results){
         res.json(results);
     });
 }
@@ -93,6 +83,5 @@ module.exports = {
     getBookByAPI: getBookByAPI,
     getItemsByType: getItemsByType,
     getByName: getByName,
-    getByLocation: getByLocation,
-    addItemToDB: addItemToDB
+    addBookToDB: addBookToDB
 };

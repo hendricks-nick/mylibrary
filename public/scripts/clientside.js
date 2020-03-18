@@ -104,8 +104,11 @@ function getBookDB() {
 // setters
 
 // adds book to database
-function setBook() {
-
+function addBook(cover, name, author, description) {
+    console.log("Adding book to DB: " + name + ", By " + author);
+    $.post("/addBook", {name: name, author: author, description: description, cover: cover}, function(data){
+        console.log(data);
+    });
 }
 
 // adds book to readlist via ID
@@ -156,7 +159,8 @@ function loadApiResults(results) {
 
     document.getElementById("bodyContainer").innerHTML = 
     '<div class="bookCover"><img src="' + bookCover + '" alt="Book Cover"></div>' +
-    '<div><h2>' +  bookName + '</h2><br>' +
-    '<h3>' + bookAuthor + '</h3><br><br>' +
-    '<h4>' + bookDescription + '</h4></div>';
+    '<div><h2>' +  bookName + '</h2>' +
+    '<h3>' + bookAuthor + '</h3><br>' +
+    '<h4>' + bookDescription + '</h4></div>' + 
+    '<input type="button" value="Add Book" onclick="addBook(bookCover, bookName, bookAuthor, bookDescription)">';
 }
