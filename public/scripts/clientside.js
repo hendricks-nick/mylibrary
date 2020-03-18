@@ -148,6 +148,19 @@ function loadApiResults(results) {
     console.log("API RESULTS::");
     console.log(results);
 
-    document.getElementById("bodyContainer").innerHTML = results;
+    let bookName = results.items[0].volumeInfo.title;
+    let bookAuthor = results.items[0].volumeInfo.Authors[0];
+    let bookDescription = results.items[0].volumeInfo.description;
+    let bookCover = results.items[0].volumeInfo.imageLinks.thumbnail;
+    
+
+    document.getElementById("bodyContainer").innerHTML = "";
+
+    $(".bodyContainer").append(
+        '<div><img src="' + bookCover + '" alt="Book Cover">' +
+        '<div><h2>' +  bookName + '</h2><br>' +
+        '<h3>' + bookAuthor + '</h3><br><br>' +
+        '<h4>' + bookDescription + '</h4></div>'
+    );
 
 }

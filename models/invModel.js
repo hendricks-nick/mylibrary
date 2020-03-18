@@ -86,29 +86,8 @@ function addBookToDB(name, desc, cover_url, authorName ,callback) {
   }); 
 }
 
-function getBookByAPI(qType, qString, callback) {
-  console.log("Requesting API for books by: " + qType + ":" + qString);
-  
-  // API query
-  var urlRequest = "https://www.googleapis.com/books/v1/volumes?q=isbn:9780399590504&key=AIzaSyBxBJ0t5Mb5ktVZY9Px5jYrZLJfrv9RXq8";
-  console.log(urlRequest);
-  
-  // Query to API
-  var xhttp = new XMLHttpRequest();   
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {  
-     var obj = JSON.parse(this.responseText);
-     console.log(obj);
-     callback(null, obj);
-    }
-  };
-  xhttp.open("GET", urlRequest, true);
-  xhttp.send();
-}
-
 module.exports = {
     getByAuthor: getByAuthor,
     getByTitle: getByTitle,
-    addBookToDB: addBookToDB,
-    getBookByAPI: getBookByAPI
+    addBookToDB: addBookToDB
 };
