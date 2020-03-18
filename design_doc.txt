@@ -2,3 +2,6 @@ isbn test list
 9781501134616
 0747532699
 0747538492
+
+
+INSERT INTO author (name) values ("J. K. Rowling") ON CONFLICT DO NOTHING;
