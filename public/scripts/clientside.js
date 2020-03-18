@@ -108,7 +108,7 @@ function addBook(storageID) {
     let book = JSON.parse(localStorage.getItem(storageID));
 
     let name = book.name;
-    let author = book.authors;
+    let author = book.author;
     let description = book.description;
     let cover = book.cover;
 
