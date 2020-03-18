@@ -159,11 +159,11 @@ function loadApiResults(results) {
     console.log(results);
     
     document.getElementById("bodyContainer").innerHTML = "";
-    for (i = 1; i < results.totalItems; i++) {
-        let bookName = results.items[(i-1)].volumeInfo.title;
-        let bookAuthor = results.items[(i-1)].volumeInfo.authors[0];
-        let bookDescription = results.items[(i-1)].volumeInfo.description;
-        let bookCover = results.items[(i-1)].volumeInfo.imageLinks.thumbnail;
+    for (i = 0; i < results.totalItems; i++) {
+        let bookName = results.items[i].volumeInfo.title;
+        let bookAuthor = results.items[i].volumeInfo.authors[0];
+        let bookDescription = results.items[i].volumeInfo.description;
+        let bookCover = results.items[i].volumeInfo.imageLinks.thumbnail;
 
         let book = JSON.stringify({name: bookName, author: bookAuthor, description: bookDescription, cover: bookCover});
         localStorage.setItem(i, book);
