@@ -148,7 +148,7 @@ function loadApiResults(results) {
     console.log("API RESULTS::");
     console.log(results);
 
-    console.log(JSON.parse(results));
+    console.log(results.items[0].volumeInfo.title);
     /*
     let bookName = results.items[0].volumeInfo.title;
     let bookAuthor = results.items[0].volumeInfo.Authors[0];
@@ -158,7 +158,7 @@ function loadApiResults(results) {
 
     document.getElementById("bodyContainer").innerHTML = "";
     
-    
+
     /*
     $(".bodyContainer").append(
         '<div><img src="' + bookCover + '" alt="Book Cover">' +
