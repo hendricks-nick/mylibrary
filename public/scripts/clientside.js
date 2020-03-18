@@ -104,8 +104,8 @@ function getBookDB() {
 // setters
 
 // adds book to database
-function addBook(bookJson) {
-    let book = JSON.parse(bookJson);
+function addBook(storageID) {
+    let book = JSON.parse(localStorage.getItem(storageID));
 
     let name = book.name;
     let author = book.authors;
@@ -157,18 +157,22 @@ function loadSearch() {
 function loadApiResults(results) {
     console.log("API RESULTS");
     console.log(results);
-
-    let bookName = results.items[0].volumeInfo.title;
-    let bookAuthor = results.items[0].volumeInfo.authors[0];
-    let bookDescription = results.items[0].volumeInfo.description;
-    let bookCover = results.items[0].volumeInfo.imageLinks.thumbnail;
     
-    let book = JSON.stringify({name: bookName, author: bookAuthor, description: bookDescription, cover: bookCover});
+    document.getElementById("bodyContainer").innerHTML = "";
+    for (i = 1; i < results.totalItems; i++) {
+        let bookName = results.items[(i-1)].volumeInfo.title;
+        let bookAuthor = results.items[(i-1)].volumeInfo.authors[0];
+        let bookDescription = results.items[(i-1)].volumeInfo.description;
+        let bookCover = results.items[(i-1)].volumeInfo.imageLinks.thumbnail;
 
-    document.getElementById("bodyContainer").innerHTML = 
-    '<div class="bookCover"><img src="' + bookCover + '" alt="Book Cover"></div>' +
-    '<div><h2>' +  bookName + '</h2>' +
-    '<h3>' + bookAuthor + '</h3><br>' +
-    '<h4>' + bookDescription + '</h4></div>' + 
-    '<input type="button" value="Add Book" onclick="addBook(' + book +')">';
+        let book = JSON.stringify({name: bookName, author: bookAuthor, description: bookDescription, cover: bookCover});
+        localStorage.setItem(i, book);
+       
+        document.getElementById("bodyContainer").innerHTML += 
+            '<div class="bookCover"><img src="' + bookCover + '" alt="Book Cover"></div>' +
+            '<div><h2>' +  bookName + '</h2>' +
+            '<h3>' + bookAuthor + '</h3><br>' +
+            '<h4>' + bookDescription + '</h4></div>' + 
+            '<input type="button" value="Add Book" onclick="addBook(' + i +')">';
+    }
 }
