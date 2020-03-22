@@ -37,7 +37,7 @@ function getAll (callback) {
 function getByTitle(title, callback) {
   console.log("Searching DB by Title for: " + title)
   // DB query
-  var sql = "SELECT * FROM book AS b INNER JOIN author AS a ON b.author_id = a.id WHERE b\exit.name LIKE '%" + title + "%';";
+  var sql = "SELECT * FROM book AS b INNER JOIN author AS a ON b.author_id = a.id WHERE b.name LIKE '%" + title + "%';";
 
   // Query to DB
   pool.query(sql, function(err, db_results) {

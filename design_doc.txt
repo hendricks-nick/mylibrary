@@ -4,4 +4,3 @@ isbn test list
 0747538492
 
 
-INSERT INTO author (name) values ("J. K. Rowling") ON CONFLICT DO NOTHING;
