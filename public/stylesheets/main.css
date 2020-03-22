@@ -67,6 +67,8 @@
    padding-left: 65px;
    padding-right: 65px;
    grid-template-rows: auto;
+   
+   background-color: rgb(58, 85, 110);
  }
  .navOptions {
    display: grid;
