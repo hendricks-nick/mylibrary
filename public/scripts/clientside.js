@@ -150,7 +150,7 @@ function loadDefaults() {
             document.getElementById("recentContainer").style.gridTemplateColumns = "1fr 1fr 1fr";
         }
         else if (data.list.length === 4){
-            document.getElementById("recentContainer").style.gridTemplateColumns = "1fr 1fr 1fr";
+            document.getElementById("recentContainer").style.gridTemplateColumns = "1fr 1fr 1fr 1fr";
         }
 
         for (var i = 0; i < data.list.length; i++){
