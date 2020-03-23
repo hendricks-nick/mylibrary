@@ -1,7 +1,7 @@
 CREATE TABLE "book" (
   "id" serial PRIMARY KEY,
   "author_id" int,
-  "name" varchar(100),
+  "title" varchar(100),
   "description" varchar(1000),
   "cover_url" varchar(200)
 );
