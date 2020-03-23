@@ -1,31 +1,17 @@
-<div class="container-fluid pt-3">
-  <div class="row">
-    <!-- Logo -->
-    <div class="col-sm-3">
-        <img src="/img/liblogo2.png" alt="Logo">
-    </div>
-    <div class="col-sm-6">
-      <img src="/img/namelogo.png" alt="NameBanner">
-    </div>
-    <div class="col-sm-3"> 
-        <!-- Search Bar -->
-        <div>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-            </form>
-        </div>
-        <div class="btn-group btn-group-toggle" data-toggle="buttons">
-            <label class="btn btn-primary">
-              <input type="radio" name="options" id="author" checked> Author
-            </label>
-            <label class="btn btn-primary">
-              <input type="radio" name="options" id="title"> Title
-            </label>
-            <label class="btn btn-primary">
-              <input type="radio" name="options" id="keyword"> Keyword
-            </label>
-          </div>
-    </div>
+<div class="navContainer">
+  <!-- Logo -->
+  <div class="logoContainer">
+    <img src="/img/liblogo2.png" alt="Logo">
+  </div>
+  <!-- Banner Logo -->
+  <div class="bannerContainer">
+    <img src="/img/namelogo.png" alt="NameBanner">
+  </div>
+  <div class="searchContainer"> 
+      <!-- Search Bar -->
+      <form class="example" action="action_page.php">
+        <input type="text" placeholder="Search.." name="search">
+        <button type="submit"><i class="fa fa-search"></i></button>
+      </form>
   </div>
 </div>
