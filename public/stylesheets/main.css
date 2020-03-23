@@ -36,11 +36,9 @@ body{
   justify-content: flex-end;
   align-content: flex-end;
 }
-
 .searchBtnContainer{
   display: flex;
   justify-content: flex-end;
-  width: 80%;
 }
 
 * {
