@@ -24,11 +24,15 @@ body{
   display: flex;
   justify-content: center;
 }
-
+.searchParentContainer{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  padding-right: 16px;
+}
 .searchContainer{
   display: flex;
   justify-content: flex-end;
-  padding-right: 16px;
 }
 
 * {
