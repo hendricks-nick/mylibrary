@@ -40,12 +40,16 @@ body{
 .searchBtnContainer{
   display: flex;
   justify-content: flex-end;
+  width: 80%;
 }
 
 * {
   box-sizing: border-box;
 }
 
+.search{
+  width: 80%;
+}
 /* Style the search field */
 form.search input[type=text] {
   padding: 10px;
@@ -64,9 +68,10 @@ form.search button {
   background: #DF691A;
   color: white;
   font-size: 17px;
-  border: 1px solid grey;
+  border: 1px solid rgb(194, 91, 23);
   border-left: none; /* Prevent double borders */
   cursor: pointer;
+  outline: none;
 }
 
 form.search button:hover {
@@ -91,6 +96,7 @@ form.search::after {
   border: .5px solid rgb(194, 91, 23);
   border-left: none; /* Prevent double borders */
   cursor: pointer;
+  outline: none;
 }
 .bodyContainer{
 
