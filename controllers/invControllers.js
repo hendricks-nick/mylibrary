@@ -75,6 +75,12 @@ function addBookToDB (req, res) {
     });
 }
 
+function getRecent(req, res){
+    invModel.getRecent(function(results){
+        res.json(results);
+    });
+}
+
 function getAll() {
     invModel.getAll(function(results){
         console.log(results);
@@ -87,6 +93,7 @@ module.exports = {
     getBookByAPI: getBookByAPI,
     getItemsByType: getItemsByType,
     getByName: getByName,
+    getRecent: getRecent,
     getAll: getAll,
     addBookToDB: addBookToDB
 };

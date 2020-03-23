@@ -19,6 +19,7 @@ app.set("view engine", "ejs");
 app.get("/", invController.getDefault);
 app.get("/api", invController.getBookByAPI);
 app.get("/search", invController.getAll);
+app.get("/getRecent", invController.getRecent);
 app.post("/addBook", invController.addBookToDB);
 
 // listening - log to HEROKU logs  

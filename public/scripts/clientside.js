@@ -131,7 +131,12 @@ function setLoaned() {
 }
 
 // loads the home screen
-function loadHome() {
+function loadDefaults() {
+    console.log("Loading Homepage..")
+
+    $.get("/getRecent", function(data){
+        console.log(data);
+    });
 }
 
 // loads the add book screen

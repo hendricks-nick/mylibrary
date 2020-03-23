@@ -113,13 +113,37 @@ function addBookToDB(name, author, description, cover_url, callback) {
       }
       }); 
     }
-  }); 
-  
+  });  
+}
+
+function getRecent(callback) {
+  console.log("Querying Recent Additions: ");
+  // DB query
+  var sql = "SELECT * FROM book AS b INNER JOIN author AS a ON b.author_id = a.id ORDER BY id DESC LIMIT 4;";
+
+  // Query to DB
+  pool.query(sql, function(err, db_results) {
+    // If an error occurred...
+    if (err) {
+        console.log("Error in query: " + err);
+        callback(err);
+    }
+    else {// Log this to the console for debugging purposes. Goes to HEROKU logs.
+    console.log(db_results.rows);
+
+      var results = {
+        success: true,
+        list: db_results.rows
+      };
+      callback(null, results);
+    } 
+  });
 }
 
 module.exports = {
   getAll: getAll,
   getByAuthor: getByAuthor,
   getByTitle: getByTitle,
-  addBookToDB: addBookToDB
+  addBookToDB: addBookToDB,
+  getRecent: getRecent
 };

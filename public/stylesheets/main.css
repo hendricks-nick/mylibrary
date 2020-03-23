@@ -55,7 +55,7 @@ form.search input[type=text] {
   border: 1px solid grey;
   float: left;
   width: 80%;
-  background: #9c9292;
+  background: white;
   outline: none;
 }
 
@@ -98,9 +98,9 @@ form.search::after {
   outline: none;
 }
 hr.solid {
-  border-top: 3px solid #9c9292;
+  border-top: 3px solid grey;
 }
-.bodyContainer{
+.recentContainer{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: auto;
