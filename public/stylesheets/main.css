@@ -38,6 +38,8 @@ body{
   font-size: 17px;
   outline: none;
   cursor: pointer;
+  border: 1px solid rgb(194, 91, 23);
+  border-right: none; /* Prevent double borders */
 }
 
 .searchParentContainer{
