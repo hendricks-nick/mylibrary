@@ -1,10 +1,11 @@
 body{
   background-color: #2B3E50;
+  margin: 0;
 }
 
 .navContainer{
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 1fr 2fr .2fr .8fr;
   grid-template-rows: auto;
   padding-top: 16px;
 }
@@ -24,6 +25,16 @@ body{
   display: flex;
   justify-content: center;
 }
+.addContainer{
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+  flex-wrap: wrap;
+}
+.addContainer div {
+  height: 90px;
+}
+
 .searchParentContainer{
   display: grid;
   grid-template-columns: 1fr;
@@ -52,6 +63,7 @@ body{
 form.search input[type=text] {
   padding: 10px;
   font-size: 17px;
+  height: 45px;
   border: 1px solid grey;
   float: left;
   width: 80%;
@@ -63,6 +75,7 @@ form.search input[type=text] {
 form.search button {
   float: left;
   width: 20%;
+  height: 45px;
   padding: 10px;
   background: #DF691A;
   color: white;
@@ -110,4 +123,5 @@ hr.solid {
 .recBook {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
