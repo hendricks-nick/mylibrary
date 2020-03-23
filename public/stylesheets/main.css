@@ -33,6 +33,8 @@ body{
 }
 .addContainer div {
   height: 90px;
+  background-color: #DF691A;
+  color: white;
 }
 
 .searchParentContainer{
@@ -57,7 +59,7 @@ body{
 }
 
 .search{
-  width: 80%;
+  width: 100%;
 }
 /* Style the search field */
 form.search input[type=text] {
