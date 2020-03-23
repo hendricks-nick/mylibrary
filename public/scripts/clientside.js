@@ -198,4 +198,5 @@ function setSearchType(obj) {
     searchType = obj.value;
     document.getElementById(searchType + "Btn").style.backgroundColor = "rgb(194, 91, 23)";
 
+    console.log(searchType);
 }
