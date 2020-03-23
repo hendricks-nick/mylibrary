@@ -54,14 +54,14 @@ form.search input[type=text] {
   font-size: 17px;
   border: 1px solid grey;
   float: left;
-  width: .8fr;
+  width: 80%;
   background: #f1f1f1;
 }
 
 /* Style the submit button */
 form.search button {
   float: left;
-  width: .2fr;
+  width: 20%;
   padding: 10px;
   background: #DF691A;
   color: white;
@@ -73,7 +73,7 @@ form.search button {
 }
 
 form.search button:hover {
-  background: #DF691A;
+  background: rgb(194, 91, 23);
 }
 
 /* Clear floats */
