@@ -190,3 +190,12 @@ function cleanString (oldString) {
     
     return newString;
 }
+
+var searchType = 'title';
+function setSearchType(obj) {
+    // un mark current search type, change search type, mark current search type
+    document.getElementById(searchType + "Btn").style.backgroundColor = "#DF691A";
+    searchType = obj.value;
+    document.getElementById(searchType + "Btn").style.backgroundColor = "rgb(194, 91, 23)";
+
+}

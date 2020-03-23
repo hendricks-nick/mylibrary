@@ -9,9 +9,12 @@
   </div>
   <div class="searchContainer"> 
       <!-- Search Bar -->
-      <form class="example" action="action_page.php">
+      <form class="search">
         <input type="text" placeholder="Search.." name="search">
         <button type="submit"><i class="fa fa-search"></i></button>
       </form>
+      <button class="searchButtons" id="titleBtn" value="title" onclick="setSearchType(this)">Title</button>
+      <button class="searchButtons" id="authorBtn" value="author" onclick="setSearchType(this)">Author</button>
+      <button class="searchButtons" id="keywordBtn" value="keyword" onclick="setSearchType(this)">Keyword</button>
   </div>
 </div>
