@@ -31,10 +31,13 @@ body{
   align-content: center;
   flex-wrap: wrap;
 }
-.addContainer div {
+.addContainer button {
   height: 90px;
   background-color: #DF691A;
   color: white;
+  font-size: 17px;
+  outline: none;
+  cursor: pointer;
 }
 
 .searchParentContainer{
