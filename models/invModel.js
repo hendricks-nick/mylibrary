@@ -119,7 +119,7 @@ function addBookToDB(name, author, description, cover_url, callback) {
 function getRecent(callback) {
   console.log("Querying Recent Additions: ");
   // DB query
-  var sql = "SELECT * FROM book AS b INNER JOIN author AS a ON b.author_id = a.id ORDER BY id DESC LIMIT 4;";
+  var sql = "SELECT * FROM book AS b INNER JOIN author AS a ON b.author_id = a.id ORDER BY b.id DESC LIMIT 4;";
 
   // Query to DB
   pool.query(sql, function(err, db_results) {
