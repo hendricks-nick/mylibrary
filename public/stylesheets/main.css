@@ -46,6 +46,18 @@ body{
   background-color: rgb(194, 91, 23);
 }
 
+.addBookContainer{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+
+}
+
+.addBookContainer div{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 .searchParentContainer{
   display: grid;
   grid-template-columns: 1fr;

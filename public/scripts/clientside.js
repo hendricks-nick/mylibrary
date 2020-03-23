@@ -169,7 +169,7 @@ function loadAdd() {
     document.getElementById("bodyContainer").innerHTML = '<div class="addBookContainer">' +
                                                          '  <div>' +
                                                          '      <form>' +
-                                                         '          <input type="text" id="queryString" name="queryString" value="example">' +
+                                                         '          <input type="text" id="queryString" name="queryString" placeholder="example">' +
                                                          '          <input type="radio" id="queryType" name="queryType" value="isbn">' +
                                                          '          <button name="data" type="button" onclick="getBookApi()">Click</button>' +
                                                          '      </form>' +
