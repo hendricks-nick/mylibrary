@@ -42,6 +42,10 @@ body{
   border-right: none; /* Prevent double borders */
 }
 
+.addContainer button:hover{
+  background-color: rgb(194, 91, 23);
+}
+
 .searchParentContainer{
   display: grid;
   grid-template-columns: 1fr;

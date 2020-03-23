@@ -166,11 +166,16 @@ function loadDefaults() {
 
 // loads the add book screen
 function loadAdd() {
-   // <form>
-     //   <input type="text" id="queryString" name="queryString" value="example">
-       // <input type="radio" id="queryType" name="queryType" value="isbn">
-        //<button name="data" type="button" onclick="getBookApi()">Click</button>
-    //</form>
+    document.getElementById("bodyContainer").innerHTML = '<div class="addBookContainer">' +
+                                                         '  <div>' +
+                                                         '      <form>' +
+                                                         '          <input type="text" id="queryString" name="queryString" value="example">' +
+                                                         '          <input type="radio" id="queryType" name="queryType" value="isbn">' +
+                                                         '          <button name="data" type="button" onclick="getBookApi()">Click</button>' +
+                                                         '      </form>' +
+                                                         '  </div>' +
+                                                         '</div>';
+   
 }
 
 // loads the single book view screen
