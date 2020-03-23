@@ -107,3 +107,7 @@ hr.solid {
   padding-left: 100px;
   padding-right: 100px;
 }
+.recBook {
+  display: flex;
+  justify-content: center;
+}
