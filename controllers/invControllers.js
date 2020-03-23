@@ -76,8 +76,9 @@ function addBookToDB (req, res) {
 }
 
 function getRecent(req, res){
-    invModel.getRecent(function(results){
-        res.send(results);
+    invModel.getRecent(function(err, results){
+        console.log(err);
+        res.json(results);
     });
 }
 

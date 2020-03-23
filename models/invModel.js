@@ -130,7 +130,7 @@ function getRecent(callback) {
     }
     else {// Log this to the console for debugging purposes. Goes to HEROKU logs.
     console.log(db_results.rows);
-
+    
       var results = {
         success: true,
         list: db_results.rows
