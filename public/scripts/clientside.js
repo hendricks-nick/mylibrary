@@ -136,7 +136,11 @@ function loadHome() {
 
 // loads the add book screen
 function loadAdd() {
-
+   // <form>
+     //   <input type="text" id="queryString" name="queryString" value="example">
+       // <input type="radio" id="queryType" name="queryType" value="isbn">
+        //<button name="data" type="button" onclick="getBookApi()">Click</button>
+    //</form>
 }
 
 // loads the single book view screen
