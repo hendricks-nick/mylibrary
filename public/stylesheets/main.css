@@ -137,8 +137,9 @@ form.search::after {
   outline: none;
 }
 hr.solid {
-  border-top: 4px solid black;
+  border-top: 4px solid rgb(194, 91, 23);
   border-bottom: none;
+  margin: 0;
 }
 .recentContainer{
   display: grid;
