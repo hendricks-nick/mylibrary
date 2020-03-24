@@ -5,10 +5,15 @@ body, html{
   font-family: 'Vollkorn', serif;
 }
 
-#bodyContainer{
- position: relative;
- min-height: 100vh;
+.pageContainer{
+  position: relative;
+  min-height: 100vh;
 }
+#bodyContainer{
+  padding-bottom: 2.5rem;
+}
+
+
 
 .navContainer{
   display: grid;
@@ -192,7 +197,7 @@ hr.solid {
   position: absolute;
   left: 0;
   bottom: 0;
-  height: 75px;
+  height: 2.5rem;
   width: 100%;
   background-color: #2B3E50;
   color: white;
