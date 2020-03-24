@@ -159,11 +159,11 @@ function loadDefaults() {
         }
 
         document.getElementById('recentContainer').innerHTML +=
-                                    '<div class="allLinkContainer">'
-                                    '   <div class="linkBox">'
-                                    '       <button onclick="getAll()">View All</button>'
-                                    '   </div'
-                                    '</div>'
+                                    '<div class="allLinkContainer">' +
+                                    '   <div class="linkBox">' +
+                                    '       <button onclick="getAll()">View All</button>' +
+                                    '   </div' +
+                                    '</div>' +
                                     '<hr class="solid">';
     });
 }
