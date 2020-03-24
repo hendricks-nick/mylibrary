@@ -163,7 +163,8 @@ function loadDefaults() {
                                     '   <div class="linkBox">' +
                                     '       <button onclick="getAll()">View All</button>' +
                                     '   </div>' +
-                                    '</div>';
+                                    '</div>' +
+                                    '<hr class="solid">';
     });
 }
 

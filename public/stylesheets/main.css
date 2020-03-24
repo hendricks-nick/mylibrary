@@ -5,7 +5,6 @@ body{
 }
 
 #bodyContainer{
-  padding: 45px;
   background-color: rgb(233, 224, 224);
 }
 
@@ -136,14 +135,15 @@ form.search::after {
   outline: none;
 }
 hr.solid {
-  border-top: 2px solid rgb(53, 75, 95);
+  border-top: 4px solid black;
+  border-bottom: none;
 }
 .recentContainer{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: auto;
-  padding-left: 100px;
-  padding-right: 100px;
+  padding-left: 130px;
+  padding-right: 130px;
 }
 .recBook {
   display: grid;
@@ -160,6 +160,8 @@ hr.solid {
 .allLinkContainer{
   display: flex;
   justify-content: flex-end;
+  padding-left: 45px;
+  padding-right: 45px;
 }
 
 .linkBox button{
