@@ -200,7 +200,7 @@ hr.solid {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   padding-left: 230px;
   padding-right: 230px;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
 }
 .fLinkDiv{
   display: grid;
@@ -208,7 +208,6 @@ hr.solid {
   width: 100%;
 }
 .fLinkDiv button{
-  width: 90%;
   height: 45px;
   padding: 10px;
   background: #2B3E50;
