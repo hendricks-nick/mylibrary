@@ -180,3 +180,8 @@ hr.solid {
   cursor: pointer;
   border: 1px solid rgb(194, 91, 23);
 }
+
+.recentHeader{
+  text-align: center;
+  font-size: 40px;
+}
