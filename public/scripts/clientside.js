@@ -137,7 +137,7 @@ function loadDefaults() {
     $.get("/getRecent", function(data){
         console.log(data);
         document.getElementById("bodyContainer").innerHTML += 
-                                        '<div class="recentHeader">RECENTLY ADDED BOOKS</div>' +
+                                        '<div class="recentHeader">Recent Books</div>' +
                                         '<div id="recentContainer" class="recentContainer"></div>';
                                                               
 
