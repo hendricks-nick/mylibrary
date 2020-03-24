@@ -103,6 +103,7 @@ function loadDefaults() {
                                     '<hr class="solid">';
         // currently leading books
         document.getElementById('bodyContainer').innerHTML +=
+                                    '<div class="recentHeader">Currently Reading</div>' +
                                     '<div class="readingContainer">' +
                                     '   <div class="readingBook">' +
                                     '       <div class="readingImage"><img src="/img/blank_cover.png"></div>' +
