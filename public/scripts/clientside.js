@@ -155,9 +155,16 @@ function loadDefaults() {
                                         '   <div><img src="' + data.list[i].cover_url + '" alt="book cover"></div>' +
                                         '   <div><h3>' + data.list[i].title + '</h3></div>' +
                                         '   <div><h4>' + data.list[i].name + '</h4></div>' +
-                                        '</div>' +
-                                        '<hr class="solid">';
+                                        '</div>';
         }
+
+        document.getElementById('recentContainer').innerHTML +=
+                                    '<div class="allLinkContainer">'
+                                    '   <div class="linkBox">'
+                                    '       <button onclick="getAll()">View All</button>'
+                                    '   </div'
+                                    '</div>'
+                                    '<hr class="solid">';
     });
 }
 

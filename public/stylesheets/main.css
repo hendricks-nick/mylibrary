@@ -155,3 +155,18 @@ hr.solid {
   height: 261px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+.allLinkContainer{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.linkBox button{
+  height: 90px;
+  background-color: #DF691A;
+  color: white;
+  font-size: 17px;
+  outline: none;
+  cursor: pointer;
+  border: 1px solid rgb(194, 91, 23);
+}
