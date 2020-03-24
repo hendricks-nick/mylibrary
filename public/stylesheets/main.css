@@ -7,7 +7,7 @@ body, html{
 
 .pageContainer{
   position: relative;
-  min-height: 100vh;
+  min-height: 100%;
 }
 #bodyContainer{
   padding-bottom: 2.5rem;
@@ -195,7 +195,6 @@ hr.solid {
 
 .footerContainer{
   position: absolute;
-  left: 0;
   bottom: 0;
   height: 2.5rem;
   width: 100%;
