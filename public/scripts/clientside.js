@@ -136,7 +136,7 @@ function loadDefaults() {
 
     $.get("/getRecent", function(data){
         console.log(data);
-        document.getElementById("bodyContainer").innerHTML = '<div id="recentContainer" class="recentContainer"></div>';
+        document.getElementById("bodyContainer").innerHTML += '<div id="recentContainer" class="recentContainer"></div>';
 
         // set number of books to display
         if (data.list.length === 1){
