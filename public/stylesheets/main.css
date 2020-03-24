@@ -6,7 +6,8 @@ body, html{
 }
 
 #bodyContainer{
- height: 100%;
+ position: relative;
+ min-height: 100vh;
 }
 
 .navContainer{
@@ -188,9 +189,10 @@ hr.solid {
 }
 
 .footerContainer{
+  position: absolute;
   left: 0;
   bottom: 0;
-  height: 90px;
+  height: 75px;
   width: 100%;
   background-color: #2B3E50;
   color: white;
