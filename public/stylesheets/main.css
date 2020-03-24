@@ -148,10 +148,11 @@ hr.solid {
 .recBook {
   display: grid;
   justify-content: center;
+  text-align: center;
 }
 
 .recBook img{
-  width: 230px;
-  height: 345px;
-  box-shadow: 10px 10px 5px grey;
+  width: 174px;
+  height: 261px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
