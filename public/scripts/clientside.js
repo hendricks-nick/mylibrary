@@ -1,6 +1,6 @@
 // gets book data from Google Books via API
 function getBookApi() {
-    var qType = document.getElementById("queryType").value;
+    var qType = apiType;
     var qString = document.getElementById("queryString").value;
     console.log("Sending API get request..");  
     console.log("Query Type: " + qType);
@@ -118,13 +118,21 @@ function loadDefaults() {
 
 // loads the add book screen
 function loadAdd() {
-    document.getElementById("bodyContainer").innerHTML = '<div class="addBookContainer">' +
-                                                         '  <div>' +
-                                                         '      <form>' +
-                                                         '          <input type="text" id="queryString" name="queryString" placeholder="example">' +
-                                                         '          <input type="radio" id="queryType" name="queryType" value="isbn">' +
-                                                         '          <button name="data" type="button" onclick="getBookApi()">Click</button>' +
-                                                         '      </form>' +
+    document.getElementById("bodyContainer").innerHTML = '<div class="addBodyContainer">' +
+                                                         '  <div class="addPageContainer">' +
+                                                         '      <div class="addPageTitle">Add A New Book</div>' +
+                                                         '      <div class="addFormContainer">' + 
+                                                         '          <div class="addFormInput"><input type="text" placeholder="Enter text here..." id="queryString"></div>' +
+                                                         '          <div class="addFormButtons">' +
+                                                         '              <button class="addButtons" id="isbnBtn" value="isbn" onclick="setApiType(this)">ISBN</button>' +
+                                                         '              <button class="addButtons" id="authorBtn" value="author" onclick="setApiType(this)">Author</button>' +
+                                                         '              <button class="addButtons" id="titleBtn" value="title" onclick="setApiType(this)">Title</button>' +
+                                                         '          </div>' +
+                                                         '      </div>' +
+                                                         '      <div class="addBookSearch">' +
+                                                         '          <button class="addButtons" id="searchBtn" onclick="getBookApi()">Search Books</button>' +
+                                                         '      </div>' +
+                                                         '      <div> </div>' +
                                                          '  </div>' +
                                                          '</div>';
    
@@ -200,4 +208,14 @@ function setSearchType(obj) {
     document.getElementById(searchType + "Btn").style.backgroundColor = "rgb(194, 91, 23)";
 
     console.log(searchType);
+}
+
+var apiType = 'isbn';
+function setSearchType(obj) {
+    // un mark current api type, change api type, mark current api type
+    document.getElementById(apiType + "Btn").style.backgroundColor = "#2B3E50";
+    apiType = obj.value;
+    document.getElementById(apiType + "Btn").style.backgroundColor = "rgb(33, 47, 61)";
+
+    console.log(apiType);
 }

@@ -262,3 +262,65 @@ hr.solid {
   text-align: center;
   font-size: 18px;
 }
+
+.addBodyContainer{
+  background-image: url("/img/bookshelf.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.addPageContainer{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  align-content: center;
+  padding-left: 130px;
+  padding-right: 130px;
+}
+
+.addPageTitle{
+  text-align: center;
+  font-size: 35px;
+  font-family: 'Oswald', sans-serif;
+}
+
+.addFormContainer{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  align-content: center;
+  justify-content: center;
+}
+.addFormInput{
+  padding: 10px;
+  font-size: 17px;
+  height: 45px;
+  border: 1px solid grey;
+  float: left;
+  width: 100%;
+  background: white;
+  outline: none;
+  text-align: center;
+}
+.addFormButtons{
+  width: 100%;
+}
+
+.addButtons{
+  float: right;
+  height: 45px;
+  width: 24.9%;
+  padding: 10px;
+  background-color: #2B3E50;
+  color: white;
+  font-size: 17px;
+  border: 1px solid rgb(33, 47, 61);
+  cursor: pointer;
+  outline: none;
+}
+.addButtons:hover{
+  background-color: rgb(33, 47, 61);
+}
+
