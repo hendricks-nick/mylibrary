@@ -125,8 +125,8 @@ function loadAdd() {
                                                          '          <div class="addFormInput"><input type="text" placeholder="Enter text here..." id="queryString"></div>' +
                                                          '          <div class="addFormButtons">' +
                                                          '              <button class="addButtons" id="isbnBtn" value="isbn" onclick="setApiType(this)">ISBN</button>' +
-                                                         '              <button class="addButtons" id="authorBtn" value="author" onclick="setApiType(this)">Author</button>' +
-                                                         '              <button class="addButtons" id="titleBtn" value="title" onclick="setApiType(this)">Title</button>' +
+                                                         '              <button class="addButtons" id="inauthorBtn" value="inauthor" onclick="setApiType(this)">Author</button>' +
+                                                         '              <button class="addButtons" id="intitleBtn" value="intitle" onclick="setApiType(this)">Title</button>' +
                                                          '          </div>' +
                                                          '      </div>' +
                                                          '      <div class="addBookSearch">' +
