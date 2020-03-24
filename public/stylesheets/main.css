@@ -197,19 +197,14 @@ hr.solid {
 }
 .footerLinks{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  padding-left: 230px;
-  padding-right: 230px;
-  padding-bottom: 20px;
+  grid-template-columns: 1fr;
+  padding-left: 300px;
+  padding-right: 300px;
+  padding-bottom: 10px;
 }
-.fLinkDiv{
-  display: grid;
-  justify-content: center;
-  width: 100%;
-}
+
 .fLinkDiv button{
   height: 45px;
-  width: 100%;
   padding: 10px;
   background: #DF691A;
   color: white;
