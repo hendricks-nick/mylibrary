@@ -203,8 +203,9 @@ hr.solid {
   padding-bottom: 10px;
 }
 
-.fLinkDiv button{
+.footerLinks button{
   height: 45px;
+  width: 25%;
   padding: 10px;
   background: #DF691A;
   color: white;
