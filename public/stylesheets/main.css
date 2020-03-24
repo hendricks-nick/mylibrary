@@ -232,11 +232,33 @@ hr.solid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
-  justify-content: center;
   text-align: center;
 }
+.readingInfo{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+}
+.readingImage{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+}
 
-.readingBook img{
+.readingImage img{
   width: 174px;
   height: 261px;
+}
+
+.readingInfoTitle{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-end;
+  justify-content: center;
+  font-size: 22px;
+}
+.readingInfoAuth{
+  text-align: center;
+  font-size: 18px;
 }

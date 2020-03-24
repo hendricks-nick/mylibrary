@@ -105,10 +105,11 @@ function loadDefaults() {
         document.getElementById('bodyContainer').innerHTML +=
                                     '<div class="readingContainer">' +
                                     '   <div class="readingBook">' +
-                                    '       <div><img src="/img/blank_cover.png"></div>' +
-                                    '       <div>No Books Currently Being Read<br>' +
-                                    '           Mark one as "Reading" to show here.'
-                                    '       </div>'
+                                    '       <div class="readingImage"><img src="/img/blank_cover.png"></div>' +
+                                    '       <div class="readingInfo">' +
+                                    '           <div class="readingInfoTitle">No Books Currently Being Read</div>' +
+                                    '           <div class="readingInfoAuth">Mark one as "Reading" to show here.</div>' +
+                                    '       </div>'+
                                     '   </div>' +
                                     '</div>';
     });
