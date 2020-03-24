@@ -17,9 +17,13 @@ app.set("view engine", "ejs");
 
 // Express routing for pages requests
 app.get("/", invController.getDefault);
-app.get("/api", invController.getBookByAPI);
-app.get("/search", invController.getAll);
+app.get("/searchTitle", invController.getByTitle);
+app.get("/searchAuthor", invController.getByAuthor);
+app.get("/searchKeyword", invController.getByKeyword);
 app.get("/getRecent", invController.getRecent);
+app.get("/getLoaned", invController.getLoanedList);
+app.get("/getAll", invController.getByTitle);
+app.get("/getBook", invController.getById);
 app.post("/addBook", invController.addBookToDB);
 
 // listening - log to HEROKU logs  

@@ -136,8 +136,7 @@ function loadDefaults() {
 
     $.get("/getRecent", function(data){
         console.log(data);
-
-        document.getElementById("recentContainer").innerHTML = "";
+        document.getElementById("bodyContainer").innerHTML = '<div id="recentContainer" class="recentContainer"></div>';
 
         // set number of books to display
         if (data.list.length === 1){
@@ -149,16 +148,13 @@ function loadDefaults() {
         else if (data.list.length === 3){
             document.getElementById("recentContainer").style.gridTemplateColumns = "1fr 1fr 1fr";
         }
-        else if (data.list.length === 4){
-            document.getElementById("recentContainer").style.gridTemplateColumns = "1fr 1fr 1fr 1fr";
-        }
 
         for (var i = 0; i < data.list.length; i++){
             document.getElementById("recentContainer").innerHTML += 
                                         '<div class="recBook">' +
-                                        '   <img src="' + data.list[i].cover_url + '" alt="book cover">' +
-                                        '   <h3>' + data.list[i].title + '</h3>' +
-                                        '   <h4>' + data.list[i].name + '</h4>' +
+                                        '   <div><img src="' + data.list[i].cover_url + '" alt="book cover"></div>' +
+                                        '   <div><h3>' + data.list[i].title + '</h3></div>' +
+                                        '   <div><h4>' + data.list[i].name + '</h4></div>' +
                                         '</div>';
         }
     });

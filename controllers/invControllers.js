@@ -1,58 +1,29 @@
 // calls on invModel to use functions for connection to Database
 const invModel = require("../models/invModel.js");
 
-
 function getDefault(req, res) {
     // display index page
     res.render("pages/index");
 }
 
-/************************************
- * name: getBookByAPI
- * purpose: Get Books from Google Books API
- ************************************/
-function getBookByAPI (req, res) {
-    let qType = req.params.queryType;
-    let qString = req.params.queryString;
-    console.log("Made it to controller.");
+function getByTitle(req, res){
 
-    invModel.getBookByAPI(qType, qString, function(err, results) {
-        console.log("Made it back: " + results);
-        res.send(results);
-    });
 }
 
-/************************************
- * name: 
- * purpose: 
- ************************************/
-function getByName(req, res) {
-    
-    var name = req.params.name;
-    
-    invModel.getByName(name, function(err, results){
-        if(!err) {
-        res.json(results);
-        }
-        else {
-            console.log("Error in getByName - invController: " + err);
-        }
-    });
+function getByAuthor(req, res){
+
 }
 
-/************************************
- * name: GETITEMSBYTYPE
- * purpose: Queries the database by inventory type
- ************************************/
-function getItemsByType (req, res) {
+function getByKeyword(req, res) {
 
-    // Set the item type by the get request
-    var itemType = req.query.itemType;
+}
 
-    // Queries DB through MODEL and forwards the results in JSON format back to clientside.js
-    invModel.getItemsByType(itemType, function(err, results){
-        res.json(results);
-    });
+function getLoanedList(req, res) {
+  
+}
+
+function getById(req, res) {
+
 }
 
 /************************************
@@ -75,6 +46,10 @@ function addBookToDB (req, res) {
     });
 }
 
+/************************************
+ * name: getRecent
+ * purpose: Pulls recent additions.
+ ************************************/
 function getRecent(req, res){
     invModel.getRecent(function(err, results){
         console.log(err);
@@ -82,6 +57,10 @@ function getRecent(req, res){
     });
 }
 
+/************************************
+ * name: getAll
+ * purpose: Pulls list of all books.
+ ************************************/
 function getAll() {
     invModel.getAll(function(results){
         console.log(results);
@@ -91,9 +70,11 @@ function getAll() {
 // exports the functions so that they can be access in index.js when required there
 module.exports = {
     getDefault: getDefault,
-    getBookByAPI: getBookByAPI,
-    getItemsByType: getItemsByType,
-    getByName: getByName,
+    getByTitle: getByTitle,
+    getByAuthor: getByAuthor,
+    getByKeyword: getByKeyword,
+    getById: getById,
+    getLoanedList: getLoanedList,
     getRecent: getRecent,
     getAll: getAll,
     addBookToDB: addBookToDB
