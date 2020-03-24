@@ -1,11 +1,11 @@
 body{
-  background-color: #2B3E50;
+  background-color: rgb(223, 223, 223);
   margin: 0;
   color: black;
 }
 
 #bodyContainer{
-  background-color: rgb(233, 224, 224);
+ 
 }
 
 .navContainer{
@@ -13,6 +13,7 @@ body{
   grid-template-columns: 1fr 2fr .2fr .8fr;
   grid-template-rows: auto;
   padding-top: 16px;
+  background-color: #2B3E50;;
 }
 
 .logoContainer{
