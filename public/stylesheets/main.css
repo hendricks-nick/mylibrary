@@ -186,3 +186,34 @@ hr.solid {
   font-size: 35px;
   font-family: 'Oswald', sans-serif;
 }
+
+.footerContainer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #2B3E50;
+  color: white;
+}
+.footerLinks{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding-left: 130px;
+  padding-right: 130px;
+}
+.fLinkDiv{
+  display: grid;
+  justify-content: center;
+}
+.fLinkDiv button{
+  width: 90%;
+  height: 45px;
+  padding: 10px;
+  background: #2B3E50;
+  color: white;
+  font-size: 17px;
+  border: 1px solid rgb(34, 50, 65);
+  cursor: pointer;
+  outline: none;
+}
+
