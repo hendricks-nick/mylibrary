@@ -6,7 +6,6 @@ body{
 
 #bodyContainer{
   padding: 45px;
-  padding-bottom: none;
 }
 
 .navContainer{
@@ -136,7 +135,7 @@ form.search::after {
   outline: none;
 }
 hr.solid {
-  border-top: 3px solid grey;
+  border-top: 2px solid rgb(53, 75, 95);
 }
 .recentContainer{
   display: grid;
