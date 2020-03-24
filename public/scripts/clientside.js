@@ -158,11 +158,11 @@ function loadDefaults() {
                                         '</div>';
         }
 
-        document.getElementById('recentContainer').innerHTML +=
+        document.getElementById('bodyContainer').innerHTML +=
                                     '<div class="allLinkContainer">' +
                                     '   <div class="linkBox">' +
                                     '       <button onclick="getAll()">View All</button>' +
-                                    '   </div' +
+                                    '   </div>' +
                                     '</div>' +
                                     '<hr class="solid">';
     });
