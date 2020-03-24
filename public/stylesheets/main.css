@@ -269,6 +269,7 @@ hr.solid {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  color: white;
 }
 
 .addPageContainer{
@@ -276,14 +277,15 @@ hr.solid {
   grid-template-columns: 1fr;
   grid-template-rows: auto;
   align-content: center;
-  padding-left: 130px;
-  padding-right: 130px;
+  padding-left: 30%;
+  padding-right: 30%;
 }
 
 .addPageTitle{
   text-align: center;
   font-size: 35px;
   font-family: 'Oswald', sans-serif;
+  padding-top: 100px;
 }
 
 .addFormContainer{
@@ -292,6 +294,9 @@ hr.solid {
   grid-template-rows: auto;
   align-content: center;
   justify-content: center;
+  border-radius: 25px;
+  padding-top: 200px;
+  background-color: rgb(223, 223, 223);
 }
 .addFormInput input[type=text]{
   padding: 10px;
@@ -311,7 +316,7 @@ hr.solid {
 .addButtons{
   float: right;
   height: 45px;
-  width: 24.9%;
+  width: 33.333%;
   padding: 10px;
   background-color: #2B3E50;
   color: white;

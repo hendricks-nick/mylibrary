@@ -8,3 +8,15 @@ isbn test list
 
 #2B3E50; background
 
+todo:
+api queries with multiple author name,or title words require some scrubbing. 
+example - query is lord of the rings, it need to structured as:
+q=intitle:lord+intitle:of+intitle:the+intitle:rings
+
+need a function to handle that. lower vs uppercase doesn't matter.
+
+need an error handling option as well for not existant request, example isbn:1234
+
+finish add a book options and formatting
+
+start book search feature
