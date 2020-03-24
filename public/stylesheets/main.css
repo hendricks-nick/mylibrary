@@ -137,7 +137,7 @@ form.search::after {
   outline: none;
 }
 hr.solid {
-  border-top: 4px solid rgb(194, 91, 23);
+  border-top: 4px solid #DF691A;
   border-bottom: none;
   margin: 0;
 }
@@ -145,8 +145,10 @@ hr.solid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: auto;
+  padding: 40px;
   padding-left: 130px;
   padding-right: 130px;
+  
 }
 .recBook {
   display: grid;
@@ -165,6 +167,7 @@ hr.solid {
   justify-content: flex-end;
   padding-left: 45px;
   padding-right: 45px;
+  padding-bottom: 25px;
 }
 
 .linkBox button{
