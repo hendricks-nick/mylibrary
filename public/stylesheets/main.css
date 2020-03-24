@@ -41,18 +41,14 @@ body{
   border: 1px solid rgb(194, 91, 23);
   border-right: none; /* Prevent double borders */
 }
-
 .addContainer button:hover{
   background-color: rgb(194, 91, 23);
 }
-
 .addBookContainer{
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
-
 }
-
 .addBookContainer div{
   display: flex;
   flex-wrap: wrap;
@@ -75,7 +71,6 @@ body{
   display: flex;
   justify-content: flex-end;
 }
-
 * {
   box-sizing: border-box;
 }
