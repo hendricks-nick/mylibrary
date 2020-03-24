@@ -196,8 +196,6 @@ hr.solid {
   color: white;
 }
 .footerLinks{
-  display: grid;
-  grid-template-columns: 1fr;
   padding-left: 300px;
   padding-right: 300px;
   padding-bottom: 10px;
