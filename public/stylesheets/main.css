@@ -188,7 +188,6 @@ hr.solid {
 }
 
 .footerContainer{
-  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -230,7 +229,7 @@ hr.solid {
 }
 .readingBook {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: .8fr 1.2fr;
   grid-template-rows: auto;
   text-align: center;
 }
