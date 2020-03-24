@@ -1,11 +1,12 @@
 body{
   background-color: #2B3E50;
   margin: 0;
-  color: white;
+  color: black;
 }
 
 #bodyContainer{
   padding: 45px;
+  background-color: rgb(233, 224, 224);
 }
 
 .navContainer{
@@ -166,6 +167,8 @@ hr.solid {
   color: white;
   font-size: 17px;
   outline: none;
+  width: 100px;
+  height: 35px;
   cursor: pointer;
   border: 1px solid rgb(194, 91, 23);
 }
