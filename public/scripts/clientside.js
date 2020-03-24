@@ -211,7 +211,7 @@ function setSearchType(obj) {
 }
 
 var apiType = 'isbn';
-function setSearchType(obj) {
+function setApiType(obj) {
     // un mark current api type, change api type, mark current api type
     document.getElementById(apiType + "Btn").style.backgroundColor = "#2B3E50";
     apiType = obj.value;

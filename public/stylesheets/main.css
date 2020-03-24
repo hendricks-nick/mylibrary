@@ -293,7 +293,7 @@ hr.solid {
   align-content: center;
   justify-content: center;
 }
-.addFormInput{
+.addFormInput input[type=text]{
   padding: 10px;
   font-size: 17px;
   height: 45px;
