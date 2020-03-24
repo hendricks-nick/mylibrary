@@ -196,13 +196,12 @@ hr.solid {
   color: white;
 }
 .footerLinks{
-  padding-left: 250px;
-  padding-right: 250px;
   padding-bottom: 10px;
   width: 100%;
 }
 
 .footerLinks button{
+  float: right;
   height: 45px;
   width: 24.9%;
   padding: 10px;
