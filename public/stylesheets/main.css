@@ -215,3 +215,28 @@ hr.solid {
   outline: none;
 }
 
+.footerLinks button:hover{
+  background: rgb(194, 91, 23);
+}
+
+.readingContainer{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  padding: 40px;
+  padding-left: 130px;
+  padding-right: 130px;
+  
+}
+.readingBook {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  justify-content: center;
+  text-align: center;
+}
+
+.readingBook img{
+  width: 174px;
+  height: 261px;
+}

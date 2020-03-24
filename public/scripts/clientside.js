@@ -93,7 +93,7 @@ function loadDefaults() {
                                         '   <div>' + data.list[i].name + '</div>' +
                                         '</div>';
         }
-
+        // all links box and divider
         document.getElementById('bodyContainer').innerHTML +=
                                     '<div class="allLinkContainer">' +
                                     '   <div class="linkBox">' +
@@ -101,6 +101,16 @@ function loadDefaults() {
                                     '   </div>' +
                                     '</div>' +
                                     '<hr class="solid">';
+        // currently leading books
+        document.getElementById('bodyContainer').innerHTML +=
+                                    '<div class="readingContainer">' +
+                                    '   <div class="readingBook">' +
+                                    '       <div><img src="/img/blank_cover.png"></div>' +
+                                    '       <div>No Books Currently Being Read<br>' +
+                                    '           Mark one as "Reading" to show here.'
+                                    '       </div>'
+                                    '   </div>' +
+                                    '</div>';
     });
 }
 
