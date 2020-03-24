@@ -209,11 +209,12 @@ hr.solid {
 }
 .fLinkDiv button{
   height: 45px;
+  width: 100%;
   padding: 10px;
-  background: #2B3E50;
+  background: #DF691A;
   color: white;
   font-size: 17px;
-  border: 1px solid rgb(34, 50, 65);
+  border: 1px solid rgb(194, 91, 23);
   cursor: pointer;
   outline: none;
 }
