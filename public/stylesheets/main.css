@@ -319,7 +319,7 @@ hr.solid {
 }
 
 .addButtons{
-  float: center;
+  float: right;
   height: 45px;
   width: 33.333%;
   padding: 10px;
