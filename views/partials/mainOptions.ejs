@@ -1,4 +1,33 @@
 <div class="pageContainer">
+    <div class="navContainer">
+        <!-- Logo -->
+        <div class="logoContainer">
+          <img src="/img/liblogo2.png" alt="Logo">
+        </div>
+        <!-- Banner Logo -->
+        <div class="bannerContainer">
+          <img src="/img/namelogo.png" alt="NameBanner">
+        </div>
+        <div class="addContainer" onclick="loadAdd()">
+          <div><button type="submit"><i class="fas fa-plus"></i></button></div>
+        </div>
+        <div class="searchParentContainer"> 
+            <!-- Search Bar -->
+            <div class="searchContainer">
+              <form class="search">
+                <input type="text" placeholder="Search.." name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+              </form>
+            </div>
+            <div class="searchBtnContainer">
+              <div class="search">
+                <button class="searchButtons" id="titleBtn" value="title" onclick="setSearchType(this)">Title</button>
+                <button class="searchButtons" id="authorBtn" value="author" onclick="setSearchType(this)">Author</button>
+                <button class="searchButtons" id="keywordBtn" value="keyword" onclick="setSearchType(this)">Keyword</button>
+              </div>
+            </div>
+        </div>
+      </div>
     <div id="bodyContainer">
         <hr class="solid">
     </div>
