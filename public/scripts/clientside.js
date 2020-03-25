@@ -121,18 +121,24 @@ function loadAdd() {
     document.getElementById("bodyContainer").innerHTML = '<div class="addBodyContainer">' +
                                                          '  <div class="addPageContainer">' +
                                                          '      <div class="addPageTitle">Add A New Book</div>' +
-                                                         '      <div class="addFormContainer">' + 
-                                                         '          <div class="addFormInput"><input type="text" placeholder="Enter text here..." id="queryString"></div>' +
+                                                         '      <div class="addFormContainer">' +
+                                                         '          <div class="addFormInput">' +
+                                                         '              <form class="addSearchForm">' + 
+                                                         '                  <input type="text" placeholder="Enter text here..." id="queryString">' +
+                                                         '              </form>' +
+                                                         '          </div>'
                                                          '          <div class="addFormButtons">' +
-                                                         '              <button class="addButtons" id="isbnBtn" value="isbn" onclick="setApiType(this)">ISBN</button>' +
-                                                         '              <button class="addButtons" id="inauthorBtn" value="inauthor" onclick="setApiType(this)">Author</button>' +
-                                                         '              <button class="addButtons" id="intitleBtn" value="intitle" onclick="setApiType(this)">Title</button>' +
+                                                         '              <div class="addSearchForm">' +
+                                                         '                  <button class="addButtons" id="isbnBtn" value="isbn" onclick="setApiType(this)">ISBN</button>' +
+                                                         '                  <button class="addButtons" id="inauthorBtn" value="inauthor" onclick="setApiType(this)">Author</button>' +
+                                                         '                  <button class="addButtons" id="intitleBtn" value="intitle" onclick="setApiType(this)">Title</button>' +
+                                                         '              </div>'
                                                          '          </div>' +
+                                                         '          <div class="addBookSearch">' +
+                                                         '              <button class="addSearchButton" id="searchBtn" onclick="getBookApi()">Search Books</button>' +
+                                                         '          </div>' +
+                                                         '          <div class="addManualLink">Or, you can manually add a book <a href="#" onclick="return false;">here.</a></div>' +
                                                          '      </div>' +
-                                                         '      <div class="addBookSearch">' +
-                                                         '          <button class="addButtons" id="searchBtn" onclick="getBookApi()">Search Books</button>' +
-                                                         '      </div>' +
-                                                         '      <div> </div>' +
                                                          '  </div>' +
                                                          '</div>';
    
