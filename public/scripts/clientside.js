@@ -185,11 +185,21 @@ function loadApiResults(results) {
         localStorage.setItem(i, book);
        
         document.getElementById("bodyContainer").innerHTML += 
-            '<div class="bookCover"><img src="' + bookCover + '" alt="Book Cover"></div>' +
-            '<div><h2>' +  bookName + '</h2>' +
-            '<h3>' + bookAuthor + '</h3><br>' +
-            '<h4>' + bookDescription + '</h4></div>' + 
-            '<input type="button" value="Add Book" onclick="addBook(' + i +')">';
+            '<div class="bookContainer">' +
+            '   <div class="leftBookContainer">' +
+            '       <div class="bookCover">' +
+            '           <img src="' + bookCover + '" alt="Book Cover">' +
+            '       </div>' +
+            '       <div class="addBookBtn">' +
+            '           <button onclick="addBook(' + i + ')">Add Book</button>' +
+            '       </div>' +
+            '   </div>' +
+            '   <div class="rightBookContainer">' +
+            '       <div class="bookAddTitle">' + bookName + '</div>' +
+            '       <div class="bookAddAuthor">' + bookAuthor + '</div>' +
+            '       <div class="bookAddDes">' + bookDescription + '</div>' +
+            '   </div>' +
+            '</div>';
     }
 }
 
