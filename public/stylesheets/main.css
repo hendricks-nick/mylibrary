@@ -274,6 +274,7 @@ hr.solid {
   background-attachment: fixed;
   background-size: cover;
   color: white;
+  min-height: 100vh;
 }
 
 .addPageContainer{
