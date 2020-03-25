@@ -3,17 +3,17 @@ body, html{
   margin: 0;
   color: black;
   font-family: 'Vollkorn', serif;
+  height: 100%;
+  position: relative;
 }
 
 .pageContainer{
-  position: fixed;
   min-height: 100vh;
-}
-#bodyContainer{
+  overflow: hidden;
+  display: block;
+  position: relative;
   padding-bottom: 2.5rem;
 }
-
-
 
 .navContainer{
   display: grid;
