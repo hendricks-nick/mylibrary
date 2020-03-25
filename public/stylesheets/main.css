@@ -368,7 +368,7 @@ hr.solid {
 .rightBookContainer{
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto;
+  grid-template-rows: .14fr .12fr .74fr;
 }
 
 .bookCover{
@@ -388,7 +388,8 @@ hr.solid {
   justify-content: center;
   align-content: center;
   flex-wrap: wrap;
-  padding-top: 20px;
+  padding-top: 10px;
+  padding-bottom: 15px;
 }
 
 .addBookBtn button{
@@ -408,7 +409,7 @@ hr.solid {
 
 .bookAddTitle{
   font-size: 32px;
-  height: 44px;
+  height: 44px; 
 }
 
 .bookAddAuthor{
