@@ -408,16 +408,16 @@ hr.solid {
 }
 
 .bookAddTitle{
-  font-size: 32px;
+  font-size: 28px;
   height: 44px; 
 }
 
 .bookAddAuthor{
-  font-size: 26px;
+  font-size: 20px;
   height: 36px;
 }
 
 .bookAddDesc{
-  font-size: 16px;
+  font-size: 14px;
   height: 220px;
 }
