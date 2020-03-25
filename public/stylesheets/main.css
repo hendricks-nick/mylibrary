@@ -297,7 +297,7 @@ hr.solid {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
-  align-content: center;
+  align-items: center;
   justify-content: center;
   border-radius: 25px;
   padding-top: 200px;
@@ -319,7 +319,7 @@ hr.solid {
 }
 
 .addButtons{
-  float: right;
+  float: center;
   height: 45px;
   width: 33.333%;
   padding: 10px;
