@@ -6,7 +6,7 @@ body, html{
 }
 
 .pageContainer{
-  position: relative;
+  position: fixed;
   min-height: 100vh;
 }
 #bodyContainer{
