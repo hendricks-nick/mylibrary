@@ -200,6 +200,7 @@ hr.solid {
   width: 100%;
   background-color: #2B3E50;
   color: white;
+  padding-top: 20px;
 }
 .footerLinks{
   padding-left: 300px;
@@ -387,6 +388,7 @@ hr.solid {
   justify-content: center;
   align-content: center;
   flex-wrap: wrap;
+  padding-top: 20px;
 }
 
 .addBookBtn button{
@@ -406,12 +408,15 @@ hr.solid {
 
 .bookAddTitle{
   font-size: 32px;
+  height: 44px;
 }
 
 .bookAddAuthor{
   font-size: 26px;
+  height: 36px;
 }
 
 .bookAddDesc{
   font-size: 16px;
+  height: 220px;
 }
