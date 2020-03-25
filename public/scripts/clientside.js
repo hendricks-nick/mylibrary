@@ -45,8 +45,6 @@ function addBook(storageID) {
     let description = cleanString(book.description);
     let cover = book.cover;
 
-
-
     console.log("Adding book to DB: " + name + ", By " + author);
     $.post("/addBook", {name: name, author: author, description: description, cover: cover}, function(data){
         console.log(data);
@@ -70,10 +68,9 @@ function loadDefaults() {
     $.get("/getRecent", function(data){
         console.log(data);
         document.getElementById("bodyContainer").innerHTML += 
-                                        '<div class="recentHeader">Recent Added Books</div>' +
-                                        '<div id="recentContainer" class="recentContainer"></div>';
+            '<div class="recentHeader">Recent Added Books</div>' +
+            '<div id="recentContainer" class="recentContainer"></div>';
                                                               
-
         // set number of books to display
         if (data.list.length === 1){
             document.getElementById("recentContainer").style.gridTemplateColumns = "1fr";
@@ -87,66 +84,111 @@ function loadDefaults() {
 
         for (var i = 0; i < data.list.length; i++){
             document.getElementById("recentContainer").innerHTML += 
-                                        '<div class="recBook">' +
-                                        '   <div><img src="' + data.list[i].cover_url + '" alt="book cover"></div>' +
-                                        '   <div>' + data.list[i].title + '</div>' +
-                                        '   <div>' + data.list[i].name + '</div>' +
-                                        '</div>';
+                '<div class="recBook">' +
+                '   <div><img src="' + data.list[i].cover_url + '" alt="book cover"></div>' +
+                '   <div>' + data.list[i].title + '</div>' +
+                '   <div>' + data.list[i].name + '</div>' +
+                '</div>';
         }
         // all links box and divider
         document.getElementById('bodyContainer').innerHTML +=
-                                    '<div class="allLinkContainer">' +
-                                    '   <div class="linkBox">' +
-                                    '       <button onclick="loadAll()">View All</button>' +
-                                    '   </div>' +
-                                    '</div>' +
-                                    '<hr class="solid">';
+            '<div class="allLinkContainer">' +
+            '   <div class="linkBox">' +
+            '       <button onclick="loadAll()">View All</button>' +
+            '   </div>' +
+            '</div>' +
+            '<hr class="solid">';
         // currently leading books
         document.getElementById('bodyContainer').innerHTML +=
-                                    '<div class="recentHeader">Currently Reading</div>' +
-                                    '<div class="readingContainer">' +
-                                    '   <div class="readingBook">' +
-                                    '       <div class="readingImage"><img src="/img/blank_cover.png"></div>' +
-                                    '       <div class="readingInfo">' +
-                                    '           <div class="readingInfoTitle">No Books Currently Being Read</div>' +
-                                    '           <div class="readingInfoAuth">Mark one as "Reading" to show here.</div>' +
-                                    '       </div>'+
-                                    '   </div>' +
-                                    '</div>';
-    });
+            '<div class="recentHeader">Currently Reading</div>' +
+            '<div class="readingContainer">' +
+            '   <div class="readingBook">' +
+            '       <div class="readingImage"><img src="/img/blank_cover.png"></div>' +
+            '       <div class="readingInfo">' +
+            '           <div class="readingInfoTitle">No Books Currently Being Read</div>' +
+            '           <div class="readingInfoAuth">Mark one as "Reading" to show here.</div>' +
+            '       </div>'+
+            '   </div>' +
+            '</div>';           
+            });
 }
 
 // loads the add book screen
 function loadAdd() {
-    document.getElementById("bodyContainer").innerHTML = '<div class="addBodyContainer">' +
-                                                         '  <div class="addPageContainer">' +
-                                                         '      <div class="addPageTitle">Add A New Book</div>' +
-                                                         '      <div class="addFormContainer">' +
-                                                         '          <div class="addFormInput">' +
-                                                         '              <form class="addSearchForm">' + 
-                                                         '                  <input type="text" placeholder="Enter text here..." id="queryString">' +
-                                                         '              </form>' +
-                                                         '          </div>'+
-                                                         '          <div class="addFormButtons">' +
-                                                         '              <div class="addSearchForm">' +
-                                                         '                  <button class="addButtons" id="isbnBtn" value="isbn" onclick="setApiType(this)">ISBN</button>' +
-                                                         '                  <button class="addButtons" id="inauthorBtn" value="inauthor" onclick="setApiType(this)">Author</button>' +
-                                                         '                  <button class="addButtons" id="intitleBtn" value="intitle" onclick="setApiType(this)">Title</button>' +
-                                                         '              </div>'+
-                                                         '          </div>' +
-                                                         '          <div class="addBookSearch">' +
-                                                         '              <button class="addSearchButton" id="searchBtn" onclick="getBookApi()">Search Books</button>' +
-                                                         '          </div>' +
-                                                         '          <div class="addManualLink">Or, you can manually add a book <a href="#" onclick="return false;">here.</a></div>' +
-                                                         '      </div>' +
-                                                         '  </div>' +
-                                                         '</div>';
-   
+    document.getElementById("bodyContainer").innerHTML = 
+        '<div class="addBodyContainer">' +
+        '  <div class="addPageContainer">' +
+        '      <div class="addPageTitle">Add A New Book</div>' +
+        '      <div class="addFormContainer">' +
+        '          <div class="addFormInput">' +
+        '              <form class="addSearchForm">' + 
+        '                  <input type="text" placeholder="Enter text here..." id="queryString">' +
+        '              </form>' +
+        '          </div>'+
+        '          <div class="addFormButtons">' +
+        '              <div class="addSearchForm">' +
+        '                  <button class="addButtons" id="isbnBtn" value="isbn" onclick="setApiType(this)">ISBN</button>' +
+        '                  <button class="addButtons" id="inauthorBtn" value="inauthor" onclick="setApiType(this)">Author</button>' +
+        '                  <button class="addButtons" id="intitleBtn" value="intitle" onclick="setApiType(this)">Title</button>' +
+        '              </div>'+
+        '          </div>' +
+        '          <div class="addBookSearch">' +
+        '              <button class="addSearchButton" id="searchBtn" onclick="getBookApi()">Search Books</button>' +
+        '          </div>' +
+        '          <div class="addManualLink">Or, you can manually add a book <a href="#" onclick="return false;">here.</a></div>' +
+        '      </div>' +
+        '  </div>' +
+        '</div>';
 }
 
 // loads ALL books
 function loadAll(){
+    $.get("/getAll", function(data){
+        console.log(data);
+        document.getElementById("bodyContainer").innerHTML += 
+            '<div class="recentHeader">Recent Added Books</div>' +
+            '<div id="recentContainer" class="recentContainer"></div>';
+                                                              
+        // set number of books to display
+        if (data.list.length === 1){
+            document.getElementById("recentContainer").style.gridTemplateColumns = "1fr";
+        }
+        else if (data.list.length === 2){
+            document.getElementById("recentContainer").style.gridTemplateColumns = "1fr 1fr";
+        }
+        else if (data.list.length === 3){
+            document.getElementById("recentContainer").style.gridTemplateColumns = "1fr 1fr 1fr";
+        }
 
+        for (var i = 0; i < data.list.length; i++){
+            document.getElementById("recentContainer").innerHTML += 
+                '<div class="recBook">' +
+                '   <div><img src="' + data.list[i].cover_url + '" alt="book cover"></div>' +
+                '   <div>' + data.list[i].title + '</div>' +
+                '   <div>' + data.list[i].name + '</div>' +
+                '</div>';
+        }
+        // all links box and divider
+        document.getElementById('bodyContainer').innerHTML +=
+            '<div class="allLinkContainer">' +
+            '   <div class="linkBox">' +
+            '       <button onclick="loadAll()">View All</button>' +
+            '   </div>' +
+            '</div>' +
+            '<hr class="solid">';
+        // currently leading books
+        document.getElementById('bodyContainer').innerHTML +=
+            '<div class="recentHeader">Currently Reading</div>' +
+            '<div class="readingContainer">' +
+            '   <div class="readingBook">' +
+            '       <div class="readingImage"><img src="/img/blank_cover.png"></div>' +
+            '       <div class="readingInfo">' +
+            '           <div class="readingInfoTitle">No Books Currently Being Read</div>' +
+            '           <div class="readingInfoAuth">Mark one as "Reading" to show here.</div>' +
+            '       </div>'+
+            '   </div>' +
+            '</div>';           
+            });
 }
 
 // loads the single book view screen
@@ -205,14 +247,12 @@ function loadApiResults(results) {
 
 function cleanString (oldString) {
     var newString = "";
-
     for (var i = 0; i < oldString.length; i++) {
         if (oldString.charAt(i) === "'") {
             newString += "'";
         }
         newString += oldString.charAt(i);
     }
-    
     return newString;
 }
 
