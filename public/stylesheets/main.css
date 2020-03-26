@@ -143,6 +143,9 @@ form.search::after {
   cursor: pointer;
   outline: none;
 }
+.searchButtons:hover{
+    background-color: rgb(194, 91, 23);
+}
 hr.solid {
   border-top: 4px solid #DF691A;
   border-bottom: none;
