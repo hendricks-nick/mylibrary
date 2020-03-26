@@ -32,6 +32,8 @@ body, html{
 .logoContainer img{
   width: 140px;
   height: 140px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .bannerContainer{
@@ -166,6 +168,7 @@ hr.solid {
   width: 174px;
   height: 261px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  cursor: pointer;
 }
 
 .allLinkContainer{
@@ -200,7 +203,6 @@ hr.solid {
   width: 100%;
   background-color: #2B3E50;
   color: white;
-  padding-top: 20px;
 }
 .footerLinks{
   padding-left: 300px;
@@ -381,6 +383,7 @@ hr.solid {
 .bookCover img{
   width: 175px;
   height: 260px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .addBookBtn{
@@ -431,19 +434,16 @@ hr.solid {
   padding-top: 45px;
   text-align: center;
 }
-
 .sBookTitle{
   display: flex;
   justify-content: center;
   font-size: 40px;
 }
-
 .sBookDetails{
   display: grid;
   grid-template-columns: .3fr .7fr;
   grid-template-rows: auto;
 }
-
 .sBookCover{
   display: flex;
   justify-content: center;
@@ -453,19 +453,17 @@ hr.solid {
 .sBookCover img{
   width: 175px;
   height: 260px;
+  cursor: pointer;
 }
-
 .sBookInfo{
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: .2fr .7fr .1fr;
   font-size: 18px;
 }
-
 .sBookDesc{
   font-size: 14px;
 }
-
 .editButtons button{
   color: white;
   font-size: 17px;
@@ -474,7 +472,6 @@ hr.solid {
   height: 35px;
   cursor: pointer;
 }
-
 .saveButton{
   background-color: green;
   border: 1px solid rgb(1, 102, 1);
@@ -482,12 +479,43 @@ hr.solid {
 .saveButton:hover{
   background-color: rgb(1, 102, 1);
 } 
-
 .deleteButton{
   background-color: red;
   border: 1px solid rgb(209, 1, 1);
 }
-
 .deleteButton:hover{
   background-color: rgb(209, 1, 1);
+}
+.suContainer{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+}
+.suMessageContainer{
+  text-align: center;
+  font-size: 40px;
+}
+.suBtnContainer{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+}
+.suBtnContainer button{
+  background-color: #DF691A;
+  color: white;
+  font-size: 17px;
+  outline: none;
+  width: 100px;
+  height: 35px;
+  cursor: pointer;
+  border: 1px solid rgb(194, 91, 23);
+}
+.suBtnContainer button:hover{
+  background-color: rgb(194, 91, 23);
+}
+.suBtnChild{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
 }

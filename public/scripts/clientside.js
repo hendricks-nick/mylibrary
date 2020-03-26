@@ -48,6 +48,7 @@ function addBook(storageID) {
     console.log("Adding book to DB: " + name + ", By " + author);
     $.post("/addBook", {name: name, author: author, description: description, cover: cover}, function(data){
         console.log(data);
+        loadSuccess();
     });
 }
 
@@ -85,7 +86,7 @@ function loadDefaults() {
         for (var i = 0; i < data.list.length; i++){
             document.getElementById("recentContainer").innerHTML += 
                 '<div class="recBook">' +
-                '   <div><img src="' + data.list[i].cover_url + '" alt="book cover"></div>' +
+                '   <div><img src="' + data.list[i].cover_url + '" alt="book cover" onclick="loadBook(' + data.list[i].book_id + ')"></div>' +
                 '   <div>' + data.list[i].title + '</div>' +
                 '   <div>' + data.list[i].name + '</div>' +
                 '</div>';
@@ -165,7 +166,7 @@ function getAll(){
         for (var i = 0; i < data.list.length; i++){
             document.getElementById("recentContainer").innerHTML += 
                 '<div class="recBook">' +
-                '   <div><img src="' + data.list[i].cover_url + '" alt="book cover"></div>' +
+                '   <div><img src="' + data.list[i].cover_url + '" alt="book cover" onclick="loadBook(' + data.list[i].book_id + ')"></div>' +
                 '   <div>' + data.list[i].title + '</div>' +
                 '   <div>' + data.list[i].name + '</div>' +
                 '</div>';
@@ -175,7 +176,6 @@ function getAll(){
 
 // loads the single book view screen
 function loadBook(id) {
-
     $.get("/getBook", {id:id}, function(data){
         console.log(data);
 
@@ -239,7 +239,23 @@ function loadSearch() {
 function loadLoaned(){
 
 }
-
+function loadSuccess(){
+    document.getElementById("bodyContainer").innerHTML = "";
+    document.getElementById("bodyContainer").innerHTML += 
+        '<div class="suContainer">'
+        '   <div class="suMessageContainer">'
+        '       <div>Book succesfully added to your library.</div>'
+        '   </div>'
+        '   <div class="suBtnContainer">'
+        '       <div class="suBtnChild">'
+        '           <button onclick="loadAdd()">Add Another</button>'
+        '       </div>'
+        '       <div class="suBtnChild">'
+        '           <button onclick="getAll()">View Library</button>'
+        '       </div>'
+        '   </div>'
+        '</div>';
+}
 // loads API results
 function loadApiResults(results) {
     console.log("API RESULTS");
