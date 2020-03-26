@@ -174,7 +174,54 @@ function getAll(){
 }
 
 // loads the single book view screen
-function loadBook() {
+function loadBook(id) {
+
+    $.get("/getBook", {id:id}, function(data){
+        console.log(data);
+
+        let title = data.list[0].title;
+        let author = data.list[0].name;
+        let description = data.list[0].description;
+        let cover = data.list[0].cover_url;
+
+        document.getElementById("bodyContainer").innerHTML = "";
+        document.getElementById("bodyContainer").innerHTML += 
+            '<div class="sBookContainer">' +
+            '   <div class="sBookTitle">' +
+            '       <div>' + title + '</div>' +
+            '   </div>' +
+            '   <div class="sBookDetails">' +
+            '       <div class="sBookCover">' +
+            '           <img src="' + cover + '" alt="book cover">' +
+            '       </div>' +
+            '       <div class="sBookInfo">' +
+            '           <div class="sBookAuthor">' +
+            '               <div>' + author + '</div>' +
+            '           </div>' +
+            '           <div class="sBookDesc">' +
+            '               <div>' + description + '</div>' +
+            '           </div>' +
+            '           <div class="sBookLists">' +
+            '               <label for="loaned">Loaned</label>' +
+            '               <input type="checkbox" id="loaned">' +
+            '               <label for="readlist">Read List</label>' +
+            '               <input type="checkbox" id="readlist">' +
+            '           </div>' +
+            '       </div>' +
+            '   </div>' +
+            '   <div class="editButtons">' +
+            '       <button class="saveButton" onclick="updateBook(' + id + ')">Save</button>' +
+            '       <button class="deleteButton" onclick="deleteBook(' + id + ')">Delete</button>' +
+            '   </div>' +
+            '</div>';
+
+            if (data.list[0].loaned === 'true'){
+                document.getElementById("loaned").checked = true;
+            }
+            if (data.list[0].readlist === 'true'){
+                document.getElementById("readlist").checked = true;
+            }
+    });
 
 }
 
