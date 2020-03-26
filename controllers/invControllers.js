@@ -61,7 +61,7 @@ function getRecent(req, res){
  * name: getAll
  * purpose: Pulls list of all books.
  ************************************/
-function getAll() {
+function getAll(req, res) {
     invModel.getAll(function(err, results){
         console.log(err);
         res.json(results);
