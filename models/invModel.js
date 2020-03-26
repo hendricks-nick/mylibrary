@@ -65,7 +65,7 @@ function getLoanedList(callback) {
 
 function getById(id, callback) {
   // DB Query
-  let sql = "SELECT * FROM book AS b INNER JOIN author AS a ON ON a.author_id = b.author_id WHERE b.book_id = '" + id +"';"
+  let sql = "SELECT * FROM book AS b INNER JOIN author AS a ON a.author_id = b.author_id WHERE b.book_id = '" + id +"';"
 
   // Log and send select to DB
   console.log("-Model-");
