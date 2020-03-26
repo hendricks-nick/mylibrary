@@ -94,7 +94,7 @@ function loadDefaults() {
         document.getElementById('bodyContainer').innerHTML +=
             '<div class="allLinkContainer">' +
             '   <div class="linkBox">' +
-            '       <button onclick="loadAll()">View All</button>' +
+            '       <button onclick="getAll()">View All</button>' +
             '   </div>' +
             '</div>' +
             '<hr class="solid">';
