@@ -31,7 +31,7 @@ function getById(req, res) {
 
     console.log("-Controller-")
     console.log("Retrieving Book by ID: " + id);
-    invModel.getById(id, function(results){
+    invModel.getById(id, function(err, results){
         res.json(results);
     });
 }
