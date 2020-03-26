@@ -145,6 +145,8 @@ function loadAdd() {
 function getAll(){
     $.get("/getAll", function(data){
         console.log(data);
+
+        document.getElementById("bodyContainer").innerHTML = "";
         document.getElementById("bodyContainer").innerHTML += 
             '<div class="recentHeader">Current Library</div>' +
             '<div id="recentContainer" class="recentContainer"></div>';
