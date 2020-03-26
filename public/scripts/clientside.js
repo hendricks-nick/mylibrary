@@ -142,7 +142,7 @@ function loadAdd() {
 }
 
 // loads ALL books
-function loadAll(){
+function getAll(){
     $.get("/getAll", function(data){
         console.log(data);
         document.getElementById("bodyContainer").innerHTML += 
