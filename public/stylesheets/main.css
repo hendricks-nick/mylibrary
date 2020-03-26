@@ -429,14 +429,14 @@ hr.solid {
   grid-template-columns: 1fr;
   grid-template-rows: .2fr .8fr;
   padding-left: 130px;
-  padding-left: 130px;
+  padding-right: 130px;
   padding-top: 45px;
-  text-align: center;
 }
 .sBookTitle{
   display: flex;
   justify-content: center;
   font-size: 40px;
+  text-align: center;
 }
 .sBookDetails{
   display: grid;
@@ -452,7 +452,9 @@ hr.solid {
 .sBookCover img{
   width: 175px;
   height: 260px;
-  cursor: pointer;
+}
+.sBookAuthor{
+  max-height: 30px;
 }
 .sBookInfo{
   display: grid;
@@ -464,11 +466,13 @@ hr.solid {
   font-size: 14px;
 }
 .editButtons button{
+  float: right;
   color: white;
   font-size: 17px;
   outline: none;
   width: 100px;
   height: 35px;
+  border-radius: 8px;
   cursor: pointer;
 }
 .saveButton{
