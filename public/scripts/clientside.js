@@ -242,18 +242,18 @@ function loadLoaned(){
 function loadSuccess(){
     document.getElementById("bodyContainer").innerHTML = "";
     document.getElementById("bodyContainer").innerHTML += 
-        '<div class="suContainer">'
-        '   <div class="suMessageContainer">'
-        '       <div>Book succesfully added to your library.</div>'
-        '   </div>'
-        '   <div class="suBtnContainer">'
-        '       <div class="suBtnChild">'
-        '           <button onclick="loadAdd()">Add Another</button>'
-        '       </div>'
-        '       <div class="suBtnChild">'
-        '           <button onclick="getAll()">View Library</button>'
-        '       </div>'
-        '   </div>'
+        '<div class="suContainer">' +
+        '   <div class="suMessageContainer">' +
+        '       <div>Book succesfully added to your library.</div>' +
+        '   </div>' +
+        '   <div class="suBtnContainer">' +
+        '       <div class="suBtnChild">' +
+        '           <button onclick="loadAdd()">Add Another</button>' +
+        '       </div>' +
+        '       <div class="suBtnChild">' +
+        '           <button onclick="getAll()">View Library</button>' +
+        '       </div>' +
+        '   </div>' +
         '</div>';
 }
 // loads API results

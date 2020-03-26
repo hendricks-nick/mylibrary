@@ -19,6 +19,7 @@ function getAll (callback) {
   var sql = "SELECT b.book_id, b.title, a.name, b.cover_url FROM book AS b INNER JOIN author AS a ON b.author_id = a.author_id ORDER BY b.book_id DESC;";
 
   // Log and send query
+  console.log("-Model-");
   console.log("Pulling ALL books from DB")
   callDatabase(sql, callback);
 }
@@ -28,11 +29,11 @@ function getAll (callback) {
  *  Purpose: Pulls list of books based on input book title.
  **********************************************************/
 function getByTitle(title, callback) {
-  console.log("Searching DB by Title for: " + title)
   // DB query
   var sql = "SELECT b.book_id, b.title, a.name, b.cover_url FROM book AS b INNER JOIN author AS a ON b.author_id = a.author_id WHERE b.title LIKE '%" + title + "%';";
 
   // Log and send query
+  console.log("-Model-");
   console.log("Searching DB by Title for: " + title)
   callDatabase(sql, callback);
 }
@@ -46,6 +47,7 @@ function getByAuthor(author, callback) {
   var sql = "SELECT b.book_id, b.title, a.name, b.cover_url FROM author AS a INNER JOIN book AS b ON a.author_id = b.author_id WHERE a.name LIKE '%" + author + "%';";
 
   // Log and send query to DB
+  console.log("-Model-");
   console.log("Searching DB by Author for: " + author);
   callDatabase(sql, callback);
 }
@@ -63,7 +65,12 @@ function getLoanedList(callback) {
 
 function getById(id, callback) {
   // DB Query
+  let sql = "SELECT * FROM book AS b INNER JOIN author AS a ON ON a.author_id = b.author_id WHERE b.book_id = '" + id +"';"
 
+  // Log and send select to DB
+  console.log("-Model-");
+  console.log("Search by ID: " + id);
+  callDatabase(sql, callback);
 }
 /***********************************************************
  *  Function: ADDBOOKTODB
@@ -77,6 +84,7 @@ function addBookToDB(name, author, description, cover_url, callback) {
   const sqlBook = "INSERT INTO book (title, description, cover_url, author_id) values (\'" + name + "\', \'" + description + "\', \'" + cover_url + "\', (SELECT author_id FROM author WHERE author.name = '" + author + "'));";
 
   // Log and send 1st insert to DB
+  console.log("-Model-");
   console.log("Adding Author: "+ sqlAuthor);
   pool.query(sqlAuthor, function(err, db_results1){
     if (err) {
@@ -101,6 +109,7 @@ function getRecent(callback) {
   var sql = "SELECT b.title, b.cover_url, a.name, b.book_id FROM book AS b INNER JOIN author AS a ON b.author_id = a.author_id ORDER BY b.book_id DESC LIMIT 4;";
   
   // Call to database
+  console.log("-Model-");
   console.log("Querying Recent Additions: ");
   callDatabase(sql, callback);
 }

@@ -22,8 +22,18 @@ function getLoanedList(req, res) {
   
 }
 
+/************************************
+ * name: getByID
+ * purpose: Retrieves book by it's ID
+ ************************************/
 function getById(req, res) {
+    let id = req.params("id");
 
+    console.log("-Controller-")
+    console.log("Retrieving Book by ID: " + id);
+    invModel.getById(id, function(results){
+        res.json(results);
+    });
 }
 
 /************************************
@@ -36,7 +46,7 @@ function addBookToDB (req, res) {
     var description = req.param("description");
     var cover = req.param("cover");
 
-    console.log(name + author);
+    console.log("-Controller-")
     console.log("Book post received:");
     console.log("Name: " + name);
     console.log("Author: " + author);
