@@ -65,6 +65,9 @@ function setLoaned() {
 // loads the home screen
 function loadDefaults() {
     console.log("Loading Homepage..")
+    
+    // Clean slate
+    document.getElementById("bodyContainer").innerHTML = "";
 
     $.get("/getRecent", function(data){
         console.log(data);
@@ -210,8 +213,8 @@ function loadBook(id) {
             '       </div>' +
             '   </div>' +
             '   <div class="editButtons">' +
-            '       <button class="saveButton" onclick="updateBook(' + id + ')">Save</button>' +
             '       <button class="deleteButton" onclick="deleteBook(' + id + ')">Delete</button>' +
+            '       <button class="saveButton" onclick="updateBook(' + id + ')">Save</button>' +
             '   </div>' +
             '</div>';
 

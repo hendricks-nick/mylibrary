@@ -493,6 +493,9 @@ hr.solid {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
+  padding-top: 100px;
+  padding-left: 150px;
+  padding-right: 150px;
 }
 .suMessageContainer{
   text-align: center;
@@ -502,13 +505,15 @@ hr.solid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
+  padding-right: 25px;
+  padding-left: 25px;
 }
 .suBtnContainer button{
   background-color: #DF691A;
   color: white;
   font-size: 17px;
   outline: none;
-  width: 100px;
+  width: 150px;
   height: 35px;
   cursor: pointer;
   border: 1px solid rgb(194, 91, 23);
