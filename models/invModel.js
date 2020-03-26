@@ -16,7 +16,7 @@ const pool = new Pool({connectionString: connectionString});
  **********************************************************/
 function getAll (callback) {
   // DB query
-  var sql = "SELECT * FROM book";
+  var sql = "SELECT * FROM book AS b INNER JOIN author AS a ON b.author_id = a.id;";
 
   // Log and send query
   console.log("Pulling ALL books from DB")

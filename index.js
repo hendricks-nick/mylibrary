@@ -22,7 +22,7 @@ app.get("/searchAuthor", invController.getByAuthor);
 app.get("/searchKeyword", invController.getByKeyword);
 app.get("/getRecent", invController.getRecent);
 app.get("/getLoaned", invController.getLoanedList);
-app.get("/getAll", invController.getByTitle);
+app.get("/getAll", invController.getAll);
 app.get("/getBook", invController.getById);
 app.post("/addBook", invController.addBookToDB);
 

@@ -146,7 +146,7 @@ function loadAll(){
     $.get("/getAll", function(data){
         console.log(data);
         document.getElementById("bodyContainer").innerHTML += 
-            '<div class="recentHeader">Recent Added Books</div>' +
+            '<div class="recentHeader">Current Library</div>' +
             '<div id="recentContainer" class="recentContainer"></div>';
                                                               
         // set number of books to display
@@ -167,28 +167,8 @@ function loadAll(){
                 '   <div>' + data.list[i].title + '</div>' +
                 '   <div>' + data.list[i].name + '</div>' +
                 '</div>';
-        }
-        // all links box and divider
-        document.getElementById('bodyContainer').innerHTML +=
-            '<div class="allLinkContainer">' +
-            '   <div class="linkBox">' +
-            '       <button onclick="loadAll()">View All</button>' +
-            '   </div>' +
-            '</div>' +
-            '<hr class="solid">';
-        // currently leading books
-        document.getElementById('bodyContainer').innerHTML +=
-            '<div class="recentHeader">Currently Reading</div>' +
-            '<div class="readingContainer">' +
-            '   <div class="readingBook">' +
-            '       <div class="readingImage"><img src="/img/blank_cover.png"></div>' +
-            '       <div class="readingInfo">' +
-            '           <div class="readingInfoTitle">No Books Currently Being Read</div>' +
-            '           <div class="readingInfoAuth">Mark one as "Reading" to show here.</div>' +
-            '       </div>'+
-            '   </div>' +
-            '</div>';           
-            });
+        }           
+    });
 }
 
 // loads the single book view screen
