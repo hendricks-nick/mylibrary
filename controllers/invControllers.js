@@ -27,7 +27,7 @@ function getLoanedList(req, res) {
  * purpose: Retrieves book by it's ID
  ************************************/
 function getById(req, res) {
-    let id = req.params("id");
+    let id = req.param("id");
 
     console.log("-Controller-")
     console.log("Retrieving Book by ID: " + id);
