@@ -278,7 +278,7 @@ function confirmDelete(id){
             '   </div>' +
             '   <div class="suBtnContainer">' +
             '       <div class="suBtnChild">' +
-            '           <button onclick="getDefault()">Home</button>' +
+            '           <button onclick="loadDefault()">Home</button>' +
             '       </div>' +
             '       <div class="suBtnChild">' +
             '           <button onclick="getAll()">View Library</button>' +
