@@ -65,7 +65,7 @@ function setLoaned() {
 // loads the home screen
 function loadDefaults() {
     console.log("Loading Homepage..")
-    
+
     // Clean slate
     document.getElementById("bodyContainer").innerHTML = "";
 
@@ -241,6 +241,13 @@ function loadSearch() {
 // loads list of loaned books
 function loadLoaned(){
 
+}
+
+function deleteBook(){
+    document.getElementById("bodyContainer").innerHTML = "";
+    document.getElementById("bodyContainer").innerHTML += 
+        '
+        '
 }
 function loadSuccess(){
     document.getElementById("bodyContainer").innerHTML = "";
