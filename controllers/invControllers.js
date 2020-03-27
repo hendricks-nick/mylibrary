@@ -32,6 +32,12 @@ function getById(req, res) {
     console.log("-Controller-")
     console.log("Retrieving Book by ID: " + id);
     invModel.getById(id, function(err, results){
+        
+        // Log error in HEROKU logs
+        if(err !== 'null'){
+            console.log("Controller getByID error: ");
+            console.log(err);
+        }
         res.json(results);
     });
 }
@@ -62,9 +68,13 @@ function addBookToDB (req, res) {
  ************************************/
 function getRecent(req, res){
     invModel.getRecent(function(err, results){
-        console.log("Controller getRecent error: ");
-        console.log(err);
-
+        
+        // Log error in HEROKU logs
+        if(err !== 'null'){
+            console.log("Controller getRecent error: ");
+            console.log(err);
+        }
+        // Send results back to clientside callback
         res.json(results);
     });
 }
@@ -75,17 +85,22 @@ function getRecent(req, res){
  ************************************/
 function getAll(req, res) {
     invModel.getAll(function(err, results){
-        console.log("Controller getAll error: ");
-        console.log(err);
-
+        
+        // Log error in HEROKU logs
+        if(err !== 'null'){
+            console.log("Controller getAll error: ");
+            console.log(err);
+        }
+        // Send results back to clientside callback
         res.json(results);
     });
 }
 
 function deleteBook(req, res){
     id = req.param("id");
-    
+
     invModel.deleteBook(id, function(results){
+        // Send results back to clientside callback
         res.json(results);
     });
 }
