@@ -70,7 +70,6 @@ function loadDefaults() {
     document.getElementById("bodyContainer").innerHTML = "";
 
     $.get("/getRecent", function(data){
-        console.log(data);
         document.getElementById("bodyContainer").innerHTML += 
             '<div class="recentHeader">Recent Added Books</div>' +
             '<div id="recentContainer" class="recentContainer"></div>';
@@ -253,7 +252,7 @@ function deleteBook(id, title, author){
         '   <div class="dltBkAuthor">' + author + '</div>' +
         '   <div class="dltBtnsRow">' +
         '       <div class="dltBtnsBox">' +
-        '           <div class="dltBtn>"' +
+        '           <div class="dltBtn">' +
         '               <button onclick="confirmDelete(' + id + ')">Delete Book</button>' +
         '           </div>' +
         '           <div class="dltBtn">' +
