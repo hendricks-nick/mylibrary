@@ -34,7 +34,7 @@ function getById(req, res) {
     invModel.getById(id, function(err, results){
         
         // Log error in HEROKU logs
-        if(err !== 'null'){
+        if(err === 'null'){
             console.log("Controller getByID error: ");
             console.log(err);
         }
@@ -70,7 +70,7 @@ function getRecent(req, res){
     invModel.getRecent(function(err, results){
         
         // Log error in HEROKU logs
-        if(err !== 'null'){
+        if(err === 'null'){
             console.log("Controller getRecent error: ");
             console.log(err);
         }
@@ -87,7 +87,7 @@ function getAll(req, res) {
     invModel.getAll(function(err, results){
         
         // Log error in HEROKU logs
-        if(err !== 'null'){
+        if(err === 'null'){
             console.log("Controller getAll error: ");
             console.log(err);
         }
