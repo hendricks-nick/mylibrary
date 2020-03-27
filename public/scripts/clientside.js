@@ -213,7 +213,7 @@ function loadBook(id) {
             '       </div>' +
             '   </div>' +
             '   <div class="editButtons">' +
-            '       <button class="deleteButton" onclick="deleteBook(' + id + ')">Delete</button>' +
+            '       <button class="deleteButton" onclick="deleteBook(' + id + ', ' + title + ', ' + author + ')">Delete</button>' +
             '       <button class="saveButton" onclick="updateBook(' + id + ')">Save</button>' +
             '   </div>' +
             '</div>';
@@ -243,12 +243,53 @@ function loadLoaned(){
 
 }
 
-function deleteBook(){
+function deleteBook(id, title, author){
     document.getElementById("bodyContainer").innerHTML = "";
     document.getElementById("bodyContainer").innerHTML += 
-        '
-        '
+        '<div class="dltConfContainer">'
+        '   <div class="dltQContainer">Are you sure you want to delete..</div>'
+        '   <div class="dltBkTitle">' + title + '</div>'
+        '   <div>BY</div>'
+        '   <div class="dltBkAuthor">' + author + '</div>'
+        '   <div class="dltBtnsRow">'
+        '       <div class="dltBtnsBox">'
+        '           <div class="dltBtn>"'
+        '               <button onclick="confirmDelete(' + id + ')">Delete Book</button>' +
+        '           </div>'
+        '           <div class="dltBtn">'
+        '               <button onclick="loadBook(' + id + ')">Return to Book</button>' +
+        '           </div>'
+        '       </div>'
+        '   </div>'
+        '</div>';
 }
+
+function confirmDelete(id){
+    console.log('Sending Delete request to DB for ID: ' + id);
+
+    $.post("/deleteBook", {id:id}, function(data){
+        console.log("Back from delete.");
+        console.log(data);
+
+        document.getElementById("bodyContainer").innerHTML = "";
+        document.getElementById("bodyContainer").innerHTML += 
+            '<div class="suContainer">' +
+            '   <div class="suMessageContainer">' +
+            '       <div>Book succesfully deleted from your library.</div>' +
+            '   </div>' +
+            '   <div class="suBtnContainer">' +
+            '       <div class="suBtnChild">' +
+            '           <button onclick="getDefault()">Home</button>' +
+            '       </div>' +
+            '       <div class="suBtnChild">' +
+            '           <button onclick="getAll()">View Library</button>' +
+            '       </div>' +
+            '   </div>' +
+            '</div>';
+
+    });
+}
+
 function loadSuccess(){
     document.getElementById("bodyContainer").innerHTML = "";
     document.getElementById("bodyContainer").innerHTML += 

@@ -62,7 +62,9 @@ function addBookToDB (req, res) {
  ************************************/
 function getRecent(req, res){
     invModel.getRecent(function(err, results){
+        console.log("Controller getRecent error: ");
         console.log(err);
+
         res.json(results);
     });
 }
@@ -73,7 +75,17 @@ function getRecent(req, res){
  ************************************/
 function getAll(req, res) {
     invModel.getAll(function(err, results){
+        console.log("Controller getAll error: ");
         console.log(err);
+
+        res.json(results);
+    });
+}
+
+function deleteBook(req, res){
+    id = req.param("id");
+    
+    invModel.deleteBook(id, function(results){
         res.json(results);
     });
 }
@@ -88,5 +100,6 @@ module.exports = {
     getLoanedList: getLoanedList,
     getRecent: getRecent,
     getAll: getAll,
-    addBookToDB: addBookToDB
+    addBookToDB: addBookToDB,
+    deleteBook: deleteBook
 };

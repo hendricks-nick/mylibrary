@@ -25,6 +25,7 @@ app.get("/getLoaned", invController.getLoanedList);
 app.get("/getAll", invController.getAll);
 app.get("/getBook", invController.getById);
 app.post("/addBook", invController.addBookToDB);
+app.post("/deleteBook", invController.deleteBook);
 
 // listening - log to HEROKU logs  
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));

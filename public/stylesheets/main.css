@@ -530,3 +530,51 @@ hr.solid {
   align-content: center;
   flex-wrap: wrap;
 }
+
+.dltConfContainer{
+  padding-left: 150px;
+  padding-right: 150px;
+  padding-top: 100px;
+  display: grid;
+  text-align: center;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr;
+  font-size: 24px;
+}
+
+.dltQContainer{
+  font-size: 40px;
+}
+
+.dltBtnsRow{
+  padding-left: 33%;
+  padding-right: 33%;
+}
+
+.dltBtnsBox{  
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+}
+
+.dltBtn{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.dltBtn button{
+  background-color: #DF691A;
+  color: white;
+  font-size: 17px;
+  outline: none;
+  width: 150px;
+  height: 35px;
+  cursor: pointer;
+  border: 1px solid rgb(194, 91, 23);
+}
+
+.dltBtn button:hover{
+  background-color: rgb(194, 91, 23);;
+}
