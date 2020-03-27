@@ -101,6 +101,20 @@ function addBookToDB(name, author, description, cover_url, callback) {
 }
 
 /***********************************************************
+ *  Function: DELETEBOOK
+ *  Purpose: Create and send SQL query to DB to delete book.
+ **********************************************************/
+function deleteBook(id, callback){
+  // SQL Query
+  let sql = 'DELETE FROM book AS b WHERE b.book_id =' + id + ';';
+
+  // Log and send query
+  console.log("-Model-");
+  console.log("Deleting ID: " + id);
+  callDatabase(sql, callback);
+}
+
+/***********************************************************
  *  Function: GETRECENT
  *  Purpose: Pulls most recent books added, up to the last 4.
  **********************************************************/
@@ -149,5 +163,6 @@ module.exports = {
   getById: getById,
   getLoanedList: getLoanedList,
   addBookToDB: addBookToDB,
-  getRecent: getRecent
+  getRecent: getRecent,
+  deleteBook: deleteBook
 };
