@@ -246,21 +246,21 @@ function loadLoaned(){
 function deleteBook(id, title, author){
     document.getElementById("bodyContainer").innerHTML = "";
     document.getElementById("bodyContainer").innerHTML += 
-        '<div class="dltConfContainer">'
-        '   <div class="dltQContainer">Are you sure you want to delete..</div>'
-        '   <div class="dltBkTitle">' + title + '</div>'
-        '   <div>BY</div>'
-        '   <div class="dltBkAuthor">' + author + '</div>'
-        '   <div class="dltBtnsRow">'
-        '       <div class="dltBtnsBox">'
-        '           <div class="dltBtn>"'
+        '<div class="dltConfContainer">' +
+        '   <div class="dltQContainer">Are you sure you want to delete..</div>' +
+        '   <div class="dltBkTitle">' + title + '</div>' +
+        '   <div>BY</div>' +
+        '   <div class="dltBkAuthor">' + author + '</div>' +
+        '   <div class="dltBtnsRow">' +
+        '       <div class="dltBtnsBox">' +
+        '           <div class="dltBtn>"' +
         '               <button onclick="confirmDelete(' + id + ')">Delete Book</button>' +
-        '           </div>'
-        '           <div class="dltBtn">'
+        '           </div>' +
+        '           <div class="dltBtn">' +
         '               <button onclick="loadBook(' + id + ')">Return to Book</button>' +
-        '           </div>'
-        '       </div>'
-        '   </div>'
+        '           </div>' +
+        '       </div>' +
+        '   </div>' +
         '</div>';
 }
 
