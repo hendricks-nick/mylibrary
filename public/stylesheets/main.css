@@ -124,11 +124,6 @@ form.search button:hover {
 }
 
 /* Clear floats */
-form.search::after {
-  content: "";
-  clear: both;
-  display: table;
-}
 
 .searchButtons{
   float: right;

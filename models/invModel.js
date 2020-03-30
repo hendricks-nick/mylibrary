@@ -32,7 +32,7 @@ function getAll (callback) {
 function getBooks(type, query, callback) {
   // Check for which type of query to send
   if (type === 'author'){
-    let sql = "SELECT * FROM book AS b INNER JOIN author AS a " +
+    var sql = "SELECT * FROM book AS b INNER JOIN author AS a " +
               "ON a.author_id = b.author_id " + 
               "WHERE lower(a.name) LIKE lower('%" + query +"%'); ";
     
@@ -42,7 +42,7 @@ function getBooks(type, query, callback) {
   }
 
   else if (type === 'title'){
-    let sql = "SELECT * FROM book AS b INNER JOIN author AS a " +
+    var sql = "SELECT * FROM book AS b INNER JOIN author AS a " +
               "ON a.author_id = b.author_id " + 
               "WHERE lower(b.title) LIKE lower('%" + query +"%'); ";
     
@@ -52,7 +52,7 @@ function getBooks(type, query, callback) {
   }
 
   else if (type === 'keyword'){
-    let sql = "SELECT * FROM book AS b INNER JOIN author AS a " +
+    var sql = "SELECT * FROM book AS b INNER JOIN author AS a " +
               "ON a.author_id = b.author_id " + 
               "WHERE lower(b.title) LIKE lower('%" + query +"%')" +
               "OR lower(b.description) LIKE lower('%" + query +"%')" +
