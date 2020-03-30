@@ -17,11 +17,9 @@ app.set("view engine", "ejs");
 
 // Express routing for pages requests
 app.get("/", invController.getDefault);
-app.get("/searchTitle", invController.getByTitle);
-app.get("/searchAuthor", invController.getByAuthor);
-app.get("/searchKeyword", invController.getByKeyword);
+app.get("/searchDB", invController.searchDB);
 app.get("/getRecent", invController.getRecent);
-app.get("/getLoaned", invController.getLoanedList);
+app.get("/getLoaned", invController.getList);
 app.get("/getAll", invController.getAll);
 app.get("/getBook", invController.getById);
 app.post("/addBook", invController.addBookToDB);

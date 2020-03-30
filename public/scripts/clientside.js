@@ -29,12 +29,6 @@ function getBookApi() {
     xhttp.send();
 }
 
-
-// gets single book data from Database
-function getBookDB() {
-
-}
-
 // setters
 // adds book to database
 function addBook(storageID) {
@@ -234,7 +228,37 @@ function loadReadlist() {
 
 // loads search results
 function loadSearch() {
+    var sType = searchType;
+    var sString = document.getElementById("searchInput").value;
 
+    $.get("/searchDB", {sType:sType, sString:sString}, function(data){
+        console.log(data);
+        
+        document.getElementById("bodyContainer").innerHTML = "";
+        document.getElementById("bodyContainer").innerHTML += 
+            '<div class="recentHeader">Current Library</div>' +
+            '<div id="recentContainer" class="recentContainer"></div>';
+                                                              
+        // set number of books to display, default 4 wide
+        if (data.list.length === 1){
+            document.getElementById("recentContainer").style.gridTemplateColumns = "1fr";
+        }
+        else if (data.list.length === 2){
+            document.getElementById("recentContainer").style.gridTemplateColumns = "1fr 1fr";
+        }
+        else if (data.list.length === 3){
+            document.getElementById("recentContainer").style.gridTemplateColumns = "1fr 1fr 1fr";
+        }
+
+        for (var i = 0; i < data.list.length; i++){
+            document.getElementById("recentContainer").innerHTML += 
+                '<div class="recBook">' +
+                '   <div><img src="' + data.list[i].cover_url + '" alt="book cover" onclick="loadBook(' + data.list[i].book_id + ')"></div>' +
+                '   <div>' + data.list[i].title + '</div>' +
+                '   <div>' + data.list[i].name + '</div>' +
+                '</div>';
+        } 
+    });
 }
 
 // loads list of loaned books

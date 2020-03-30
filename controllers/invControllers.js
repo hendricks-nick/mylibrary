@@ -1,24 +1,45 @@
 // calls on invModel to use functions for connection to Database
 const invModel = require("../models/invModel.js");
 
+/************************************
+ * name: getDefault
+ * purpose: Loads main page.
+ ************************************/
 function getDefault(req, res) {
     // display index page
     res.render("pages/index");
 }
 
-function getByTitle(req, res){
+/************************************
+ * name: searchDB
+ * purpose: Pulls list of books based
+ *          on type and string input.
+ ************************************/
+function searchDB(req, res){
+    type = req.param("sType");
+    query = req.param("sString");
 
+    // Log and send to DB
+    console.log("-Controller-");
+    console.log("Searching by " + type + ": " + query);
+    
+    invModel.getBooks(type, query, function(err, results){
+        // Log error in HEROKU logs
+        if(err === 'null'){
+            console.log("Controller searchDB error: ");
+            console.log(err);
+        }
+        // Send results back to clientside callback
+        res.json(results);
+    });
 }
 
-function getByAuthor(req, res){
-
-}
-
-function getByKeyword(req, res) {
-
-}
-
-function getLoanedList(req, res) {
+/************************************
+ * name: getList
+ * purpose: Pulls list of books either
+ *          on read list or loaned.
+ ************************************/
+function getList(req, res) {
   
 }
 
@@ -96,6 +117,10 @@ function getAll(req, res) {
     });
 }
 
+/************************************
+ * name: deleteBook
+ * purpose: Deletes selected book.
+ ************************************/
 function deleteBook(req, res){
     id = req.param("id");
 
@@ -108,11 +133,9 @@ function deleteBook(req, res){
 // exports the functions so that they can be access in index.js when required there
 module.exports = {
     getDefault: getDefault,
-    getByTitle: getByTitle,
-    getByAuthor: getByAuthor,
-    getByKeyword: getByKeyword,
+    searchDB: searchDB,
     getById: getById,
-    getLoanedList: getLoanedList,
+    getList: getList,
     getRecent: getRecent,
     getAll: getAll,
     addBookToDB: addBookToDB,

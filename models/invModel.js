@@ -25,40 +25,47 @@ function getAll (callback) {
 }
 
 /***********************************************************
- *  Function: GETBYTITLE
- *  Purpose: Pulls list of books based on input book title.
+ *  Function: GETBOOKS
+ *  Purpose: Pulls list of books based on input search type 
+ *           and string.
  **********************************************************/
-function getByTitle(title, callback) {
-  // DB query
-  var sql = "SELECT b.book_id, b.title, a.name, b.cover_url FROM book AS b INNER JOIN author AS a ON b.author_id = a.author_id WHERE b.title LIKE '%" + title + "%';";
+function getBooks(type, query, callback) {
+  // Check for which type of query to send
+  if (type === 'author'){
+    let sql = "SELECT * FROM book AS b INNER JOIN author AS a " +
+              "ON a.author_id = b.author_id " + 
+              "WHERE lower(a.name) LIKE lower('%" + query +"%'); ";
+    
+    // Log location
+    console.log("-Model-");
+    console.log("Searching DB by Author for: " + query);
+  }
 
-  // Log and send query
-  console.log("-Model-");
-  console.log("Searching DB by Title for: " + title)
+  else if (type === 'title'){
+    let sql = "SELECT * FROM book AS b INNER JOIN author AS a " +
+              "ON a.author_id = b.author_id " + 
+              "WHERE lower(b.title) LIKE lower('%" + query +"%'); ";
+    
+    // Log location
+    console.log("-Model-");
+    console.log("Searching DB by Title for: " + query);
+  }
+
+  else if (type === 'keyword'){
+    let sql = "SELECT * FROM book AS b INNER JOIN author AS a " +
+              "ON a.author_id = b.author_id " + 
+              "WHERE lower(b.title) LIKE lower('%" + query +"%')" +
+              "OR lower(b.description) LIKE lower('%" + query +"%')" +
+              "OR lower(a.name) LIKE lower('%" + query +"%');";
+
+    // Log location
+    console.log("-Model-");
+    console.log("Searching DB by Keyword for: " + query);
+  }
   callDatabase(sql, callback);
 }
 
-/***********************************************************
- *  Function: GETBYAUTHOR
- *  Purpose: Pulls list of books based on input author name.
- **********************************************************/
-function getByAuthor(author, callback) {
-  // DB query
-  var sql = "SELECT b.book_id, b.title, a.name, b.cover_url FROM author AS a INNER JOIN book AS b ON a.author_id = b.author_id WHERE a.name LIKE '%" + author + "%';";
-
-  // Log and send query to DB
-  console.log("-Model-");
-  console.log("Searching DB by Author for: " + author);
-  callDatabase(sql, callback);
-}
-
-function getByKeyword(keyword, callback) {
-  // DB Query
-  
-
-}
-
-function getLoanedList(callback) {
+function getList(type, callback) {
   // DB Query
 
 }
@@ -157,11 +164,9 @@ function callDatabase(sqlQuery, callback){
 // Functions being exported to use in invController
 module.exports = {
   getAll: getAll,
-  getByAuthor: getByAuthor,
-  getByTitle: getByTitle,
-  getByKeyword: getByKeyword,
+  getBooks:getBooks,
   getById: getById,
-  getLoanedList: getLoanedList,
+  getList: getList,
   addBookToDB: addBookToDB,
   getRecent: getRecent,
   deleteBook: deleteBook
