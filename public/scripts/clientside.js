@@ -249,6 +249,7 @@ function loadBook(id) {
                 document.getElementById("readlist").checked = true;
             }
     });
+}
 
 // loads the readlist
 function loadReadlist() {
