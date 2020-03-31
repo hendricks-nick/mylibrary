@@ -241,10 +241,10 @@ function loadBook(id) {
             '   </div>' +
             '</div>';
 
-            if (data.list[1].loaned === 'true'){
+            if (data.list[0].loaned === 'true'){
                 document.getElementById("loaned").checked = true;
             }
-            if (data.list[1].readlist === 'true'){
+            if (data.list[0].readlist === 'true'){
                 document.getElementById("readlist").checked = true;
             }
     });
