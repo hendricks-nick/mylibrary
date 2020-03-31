@@ -603,6 +603,9 @@ background-color: rgb(194, 91, 23);
 }
 
 @media only screen and (max-width: 600px) {
+  body, html, .pageContainer{
+    width: 100%;
+  }
   .navContainer{
     grid-template-columns: 1fr;
   }
