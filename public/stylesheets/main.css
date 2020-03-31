@@ -361,6 +361,7 @@ background-color: rgb(194, 91, 23);
   background-color: #2B3E50;
   color: white;
   font-size: 17px;
+  border-radius: 8px;
   border: 1px solid rgb(33, 47, 61);
   cursor: pointer;
   outline: none;
