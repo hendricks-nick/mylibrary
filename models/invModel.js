@@ -87,7 +87,7 @@ function updateBook(id, loaned, readlist, callback) {
  **********************************************************/
 function getList(type, callback) {
   // DB Query
-  sql = "SELECT * book AS b INNER JOIN author AS a ON a.author_id = b.author_id WHERE b." + type + " = 'true';";
+  sql = "SELECT * FROM book AS b INNER JOIN author AS a ON a.author_id = b.author_id WHERE b." + type + " = 'true';";
 
   // Log and send to DB
   console.log("-Model-");
