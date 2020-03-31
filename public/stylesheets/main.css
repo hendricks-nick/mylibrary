@@ -193,6 +193,7 @@ hr.solid {
   outline: none;
   width: 100px;
   height: 35px;
+  border-radius: 8px;
   cursor: pointer;
   border: 1px solid rgb(194, 91, 23);
 }
