@@ -689,6 +689,7 @@ background-color: rgb(194, 91, 23);
   }
   .bookContainer{
     grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
     padding-left: 0;
     padding-right: 0;
     padding-top: 15px;
