@@ -687,4 +687,8 @@ background-color: rgb(194, 91, 23);
     grid-template-columns: 1fr;
     padding: 0;
   }
+  .sBookContainer{
+    padding: 0;
+    grid-template-rows: 1fr;
+  }
 }
