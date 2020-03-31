@@ -385,8 +385,10 @@ function confirmDelete(id){
             '       <div>Book succesfully deleted from your library.</div>' +
             '   </div>' +
             '   <div class="suBtnContainer">' +
-            '       <div class="suBtnChild">' +
-            '           <button onclick="loadDefaults()">Home</button>' +
+            '       <div class="btnsRow">' +
+            '           <div class="suBtnChild">' +
+            '               <button onclick="loadDefaults()">Home</button>' +
+            '           </div>' +
             '       </div>' +
             '       <div class="suBtnChild">' +
             '           <button onclick="getAll()">View Library</button>' +
