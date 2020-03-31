@@ -464,8 +464,11 @@ hr.solid {
 .sBookDesc{
   font-size: 14px;
 }
+.editButtons{
+  display: flex;
+  justify-content: flex-end;
+}
 .editButtons button{
-  float: right;
   color: white;
   font-size: 17px;
   outline: none;
@@ -473,7 +476,7 @@ hr.solid {
   height: 35px;
   border-radius: 8px;
   cursor: pointer;
-  padding-left: 5px;
+  padding-left: 10px;
 }
 .saveButton{
   background-color: green;
