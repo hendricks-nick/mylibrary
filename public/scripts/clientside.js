@@ -48,6 +48,7 @@ function updateBook(id){
 
     $.post("/updateBook", {id:id, loaned:loaned, readlist:readlist}, function(data){
         console.log(data);
+        loadSaveSuccess(id);
     });
 }
 
@@ -366,6 +367,27 @@ function loadSuccess(){
         '   </div>' +
         '</div>';
 }
+
+function loadSaveSuccess(id){
+    document.getElementById("bodyContainer").innerHTML = "";
+    document.getElementById("bodyContainer").innerHTML += 
+        '<div class="suContainer">' +
+        '   <div class="suMessageContainer">' +
+        '       <div>Book succesfully saved to your library.</div>' +
+        '   </div>' +
+        '   <div class="btnsRow">' +
+        '       <div class="suBtnContainer">' +
+        '           <div class="suBtnChild">' +
+        '               <button onclick="loadBook(' + id + ')">View Book</button>' +
+        '           </div>' +
+        '           <div class="suBtnChild">' +
+        '               <button onclick="getAll()">View Library</button>' +
+        '           </div>' +
+        '       </div>' +
+        '   </div>' +
+        '</div>';
+}
+
 // loads API results
 function loadApiResults(results) {
     console.log("API RESULTS");
