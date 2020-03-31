@@ -612,7 +612,7 @@ background-color: rgb(194, 91, 23);
     width: 100%;
   }
   .pageContainer{
-    padding-bottom: 54px;
+    padding-bottom: 70px;
   }
   .navContainer{
     padding-top: 8px;
@@ -652,7 +652,7 @@ background-color: rgb(194, 91, 23);
   }
 
   .footerContainer{
-    height: 50px;
+    height: 66px;
   }
   .footerLinks{
     padding: 0;
@@ -681,6 +681,10 @@ background-color: rgb(194, 91, 23);
     justify-content: center;
   }
   .addPageContainer{
+    padding: 0;
+  }
+  .bookContainer{
+    grid-template-columns: 1fr;
     padding: 0;
   }
 }
