@@ -279,7 +279,7 @@ function deleteBook(id, title, author){
         '   <div class="dltBkTitle">' + title + '</div>' +
         '   <div>BY</div>' +
         '   <div class="dltBkAuthor">' + author + '</div>' +
-        '   <div class="dltBtnsRow">' +
+        '   <div class="btnsRow">' +
         '       <div class="dltBtnsBox">' +
         '           <div class="dltBtn">' +
         '               <button onclick="confirmDelete(' + id + ')">Delete Book</button>' +
@@ -325,12 +325,14 @@ function loadSuccess(){
         '   <div class="suMessageContainer">' +
         '       <div>Book succesfully added to your library.</div>' +
         '   </div>' +
-        '   <div class="suBtnContainer">' +
-        '       <div class="suBtnChild">' +
-        '           <button onclick="loadAdd()">Add Another</button>' +
-        '       </div>' +
-        '       <div class="suBtnChild">' +
-        '           <button onclick="getAll()">View Library</button>' +
+        '   <div class="btnsRow">' +
+        '       <div class="suBtnContainer">' +
+        '           <div class="suBtnChild">' +
+        '               <button onclick="loadAdd()">Add Another</button>' +
+        '           </div>' +
+        '           <div class="suBtnChild">' +
+        '               <button onclick="getAll()">View Library</button>' +
+        '           </div>' +
         '       </div>' +
         '   </div>' +
         '</div>';
