@@ -645,13 +645,14 @@ background-color: rgb(194, 91, 23);
     height: 4.5rem;
   }
   .footerLinks{
-    padding: 0px;
+    padding: 0;
   }
   .footerLinks button{
     height: 100%;
   }
   .libraryContainer{
     grid-template-columns: 1fr !important;
+    padding: 0;
   }
   .allLinkContainer{
     justify-content: center;
