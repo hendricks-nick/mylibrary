@@ -106,7 +106,7 @@ body, html{
 }
 
 /* Style the submit button */
-.search button {
+.searchIconBtn {
   float: left;
   width: 20%;
   height: 45px;
