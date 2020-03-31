@@ -743,6 +743,8 @@ background-color: rgb(194, 91, 23);
     padding-left: 15px;
     padding-right: 15px;
     padding-top: 45px;
+  }
+  .suMessageContainer{
     font-size: 30px;
   }
   .dltConfContainer{
@@ -750,7 +752,9 @@ background-color: rgb(194, 91, 23);
     padding-right: 0;
     padding-top: 45px;
   }
-
+  .dltQContainer{
+    font-size: 30px;
+  }
   .btnsRow{
     padding: 0;
   }
