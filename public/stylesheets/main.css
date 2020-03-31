@@ -651,7 +651,7 @@ background-color: rgb(194, 91, 23);
     height: 100%;
   }
   .libraryContainer{
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
   }
   .allLinkContainer{
     justify-content: center;
