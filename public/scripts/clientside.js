@@ -228,9 +228,9 @@ function loadBook(id) {
             '               <div>' + description + '</div>' +
             '           </div>' +
             '           <div class="sBookLists">' +
-            '               <label for="loaned">Loaned</label>' +
+            '               Loaned' +
             '               <input type="checkbox" id="loaned">' +
-            '               <label for="readlist">Read List</label>' +
+            '               Read List' +
             '               <input type="checkbox" id="readlist">' +
             '           </div>' +
             '       </div>' +
