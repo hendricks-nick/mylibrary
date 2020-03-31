@@ -607,7 +607,19 @@ background-color: rgb(194, 91, 23);
     width: 100%;
   }
   .navContainer{
-    grid-template-columns: 1fr;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-areas: 
+      "banner banner banner banner banner"
+      "add search search search search";
+  }
+  .bannerContainer{
+    grid-area: banner;
+  }
+  .addContainer{
+    grid-area: add;
+  }
+  .searchParentContainer{
+    grid-area: search;
   }
   .logoContainer{
     visibility: hidden;
@@ -616,5 +628,6 @@ background-color: rgb(194, 91, 23);
   .bannerContainer img{
     width: 100%;
     height: auto;
+    padding-left: 5px;
   }
 }
