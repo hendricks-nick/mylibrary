@@ -744,4 +744,9 @@ background-color: rgb(194, 91, 23);
     padding-right: 0;
     padding-top: 45px;
   }
+  .dltConfContainer{
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 45px;
+  }
 }
