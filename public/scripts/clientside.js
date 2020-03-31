@@ -260,7 +260,7 @@ function loadReadlist() {
         console.log(data);
         if(data.list.length === 0){
             body.innerHTML +=
-                '<div class="libraryHeader">Currently Readlist</div>' +
+                '<div class="libraryHeader">Current Readlist</div>' +
                 '<div class="emptyContainer">' +
                 '   <div class="emptyBook">' +
                 '       <div class="emptyImage"><img src="/img/blank_cover.png"></div>' +
@@ -343,7 +343,7 @@ function loadLoaned(){
         }
         else if(data.list.length > 0){
             body.innerHTML += 
-                '<div class="libraryHeader">Current ReadList</div>' +
+                '<div class="libraryHeader">Currently Loaned</div>' +
                 '<div id="readingContainer" class="readingContainer"></div>';
                 formatBooks(data);
         }
