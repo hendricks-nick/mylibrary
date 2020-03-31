@@ -476,6 +476,8 @@ background-color: rgb(194, 91, 23);
 .sBookCover img{
   width: 175px;
   height: 260px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 }
 .sBookAuthor{
   max-height: 30px;
@@ -697,5 +699,12 @@ background-color: rgb(194, 91, 23);
   }
   .sBookInfo{
     grid-template-rows: 1fr;
+    text-align: center;
   }
+  .sBookDesc{
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: justify !important;
+  }
+
 }
