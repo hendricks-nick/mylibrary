@@ -617,9 +617,11 @@ background-color: rgb(194, 91, 23);
   }
   .addContainer{
     grid-area: add;
+    width: 100%;
   }
   .searchParentContainer{
     grid-area: search;
+    padding-right: 0px;
   }
   .logoContainer{
     visibility: hidden;
@@ -628,6 +630,6 @@ background-color: rgb(194, 91, 23);
   .bannerContainer img{
     width: 100%;
     height: auto;
-    padding-left: 5px;
+    padding-left: 15px;
   }
 }
