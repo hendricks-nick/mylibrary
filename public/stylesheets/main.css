@@ -84,6 +84,7 @@ body, html{
 .searchBtnContainer{
   display: flex;
   justify-content: flex-end;
+  width: 100%;
 }
 * {
   box-sizing: border-box;
