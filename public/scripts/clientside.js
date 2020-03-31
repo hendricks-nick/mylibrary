@@ -389,9 +389,9 @@ function confirmDelete(id){
             '           <div class="suBtnChild">' +
             '               <button onclick="loadDefaults()">Home</button>' +
             '           </div>' +
-            '       </div>' +
-            '       <div class="suBtnChild">' +
-            '           <button onclick="getAll()">View Library</button>' +
+            '           <div class="suBtnChild">' +
+            '               <button onclick="getAll()">View Library</button>' +
+            '           </div>' +
             '       </div>' +
             '   </div>' +
             '</div>';
