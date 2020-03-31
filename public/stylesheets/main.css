@@ -601,3 +601,12 @@ background-color: rgb(194, 91, 23);
 .dltBtn button:hover{
   background-color: rgb(194, 91, 23);;
 }
+
+@media only screen and (max-width: 600px) {
+  .navContainer{
+    grid-template-columns: 1fr;
+  }
+  .logoContainer{
+    visibility: hidden;
+  }
+}
