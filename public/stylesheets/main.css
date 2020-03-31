@@ -93,7 +93,7 @@ body, html{
   width: 100%;
 }
 /* Style the search field */
-form.search input[type=text] {
+.search input[type=text] {
   padding: 10px;
   font-size: 17px;
   height: 45px;
@@ -105,7 +105,7 @@ form.search input[type=text] {
 }
 
 /* Style the submit button */
-form.search button {
+.search button {
   float: left;
   width: 20%;
   height: 45px;
@@ -119,7 +119,7 @@ form.search button {
   outline: none;
 }
 
-form.search button:hover {
+.search button:hover {
   background: rgb(194, 91, 23);
 }
 
