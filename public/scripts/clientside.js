@@ -162,7 +162,6 @@ function loadAdd() {
         '          <div class="addBookSearch">' +
         '              <button class="addSearchButton" id="searchBtn" onclick="getBookApi()">Search Books</button>' +
         '          </div>' +
-        '          <div class="addManualLink">Or, you can manually add a book <a href="#" onclick="return false;">here.</a></div>' +
         '      </div>' +
         '  </div>' +
         '</div>';
@@ -230,7 +229,7 @@ function loadBook(id) {
             '           <div class="sBookLists">' +
             '               Loaned' +
             '               <input type="checkbox" id="loaned">' +
-            '               Read List' +
+            '               ReadList' +
             '               <input type="checkbox" id="readlist">' +
             '           </div>' +
             '       </div>' +
