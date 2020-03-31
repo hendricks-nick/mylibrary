@@ -91,22 +91,56 @@ function loadDefaults() {
             '   </div>' +
             '</div>' +
             '<hr class="solid">';
-        $.get("/getList", {type:type}, function(data){
-            console.log(data);
-    
+            
+        loadReadlist(type);
+    });
+}
+
+function loadReadlist(type){
+    $.get("/getList", {type:type}, function(data){
+        console.log(data);
+        if(data.list.length === 0){
             document.getElementById('bodyContainer').innerHTML +=
                 '<div class="libraryHeader">Currently Reading</div>' +
-                '<div class="readingContainer">' +
-                '   <div class="readingBook">' +
-                '       <div class="readingImage"><img src="/img/blank_cover.png"></div>' +
-                '       <div class="readingInfo">' +
-                '           <div class="readingInfoTitle">No Books Currently Being Read</div>' +
-                '           <div class="readingInfoAuth">Mark one as "Reading" to show here.</div>' +
+                '<div class="emptyContainer">' +
+                '   <div class="emptyBook">' +
+                '       <div class="emptyImage"><img src="/img/blank_cover.png"></div>' +
+                '       <div class="emptyInfo">' +
+                '           <div class="emptyInfoTitle">No Books Currently Being Read</div>' +
+                '           <div class="emptyInfoAuth">Mark one as "Reading" to show here.</div>' +
                 '       </div>'+
                 '   </div>' +
                 '</div>';
-        });         
-    });
+        }
+        else if(data.list.length > 0){
+            document.getElementById("bodyContainer").innerHTML += 
+                '<div class="libraryHeader">Currently Reading</div>' +
+                '<div id="readingContainer" class="readingContainer"></div>';
+                formatBooks(data);
+        }
+    }); 
+}
+
+function formatBooks(data){
+    // set number of books to display
+    if (data.list.length === 1){
+        document.getElementById("readingContainer").style.gridTemplateColumns = "1fr";
+    }
+    else if (data.list.length === 2){
+        document.getElementById("readingContainer").style.gridTemplateColumns = "1fr 1fr";
+    }
+    else if (data.list.length === 3){
+        document.getElementById("readingContainer").style.gridTemplateColumns = "1fr 1fr 1fr";
+    }
+
+    for (var i = 0; i < data.list.length || i < 4; i++){
+        document.getElementById("libraryContainer").innerHTML += 
+            '<div class="libraryBook">' +
+            '   <div><img src="' + data.list[i].cover_url + '" alt="book cover" onclick="loadBook(' + data.list[i].book_id + ')"></div>' +
+            '   <div>' + data.list[i].title + '</div>' +
+            '   <div>' + data.list[i].name + '</div>' +
+            '</div>';
+    }
 }
 
 // loads the add book screen
