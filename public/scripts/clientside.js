@@ -236,8 +236,8 @@ function loadBook(id) {
             '       </div>' +
             '   </div>' +
             '   <div class="editButtons">' +
-            '       <button class="deleteButton" onclick="deleteBook(' + id + ', \'' + title + '\', \'' + author + '\')">Delete</button>' +
             '       <button class="saveButton" onclick="updateBook(' + id + ')">Save</button>' +
+            '       <button class="deleteButton" onclick="deleteBook(' + id + ', \'' + title + '\', \'' + author + '\')">Delete</button>' +
             '   </div>' +
             '</div>';
 
