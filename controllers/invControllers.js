@@ -43,6 +43,19 @@ function getList(req, res) {
   
 }
 
+function updateBook(req,res) {
+    var loaned = req.param('loaned');
+    var readlist = req.param('readlist');
+    var id = req.param('id');
+
+    console.log('-Controller-');
+    console.log('Updating book.');
+
+    invModel.updateBook(id, loaned, readlist, function(results){
+        res.json(results);
+    });
+}
+
 /************************************
  * name: getByID
  * purpose: Retrieves book by it's ID
@@ -139,5 +152,6 @@ module.exports = {
     getRecent: getRecent,
     getAll: getAll,
     addBookToDB: addBookToDB,
-    deleteBook: deleteBook
+    deleteBook: deleteBook,
+    updateBook: updateBook
 };

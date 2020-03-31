@@ -23,6 +23,7 @@ app.get("/getLoaned", invController.getList);
 app.get("/getAll", invController.getAll);
 app.get("/getBook", invController.getById);
 app.post("/addBook", invController.addBookToDB);
+app.post("/updateBook", invController.updateBook);
 app.post("/deleteBook", invController.deleteBook);
 
 // listening - log to HEROKU logs  

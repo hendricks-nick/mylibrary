@@ -65,6 +65,16 @@ function getBooks(type, query, callback) {
   callDatabase(sql, callback);
 }
 
+function updateBook(id, loaned, readlist, callback) {
+  // DB Query
+  var sql = "UPDATE book SET loaned = '" + loaned + "', readlist = '" + readlist + "' WHERE book_id = '" + id + "';";
+
+  // Log and Send DB
+  console.log("-Model-");
+  console.log("Updateing DB for ID: " + id);
+  callDatabase(sql, callback);
+}
+
 function getList(type, callback) {
   // DB Query
 

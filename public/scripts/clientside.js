@@ -46,14 +46,14 @@ function addBook(storageID) {
     });
 }
 
-// adds book to readlist via ID
-function setReadlist() {
+// update book
+function updateBook(id){
+    var loaned = document.getElementById('loaned').checked;
+    var readlist = document.getElementById('readlist').checked;
 
-}
-
-// adds book and contact to loaned databast table
-function setLoaned() {
-
+    $.post("/updateBook", {id:id, loaned:loaned, readlist:readlist}, function(date){
+        console.log(data);
+    });
 }
 
 // loads the home screen
