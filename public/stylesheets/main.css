@@ -638,4 +638,7 @@ background-color: rgb(194, 91, 23);
     height: auto;
     padding-left: 15px;
   }
+  .footerLinks{
+    padding: 0px;
+  }
 }
