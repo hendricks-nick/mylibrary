@@ -19,7 +19,7 @@ app.set("view engine", "ejs");
 app.get("/", invController.getDefault);
 app.get("/searchDB", invController.searchDB);
 app.get("/getRecent", invController.getRecent);
-app.get("/getLoaned", invController.getList);
+app.get("/getList", invController.getList);
 app.get("/getAll", invController.getAll);
 app.get("/getBook", invController.getById);
 app.post("/addBook", invController.addBookToDB);

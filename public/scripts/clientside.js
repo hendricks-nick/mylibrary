@@ -5,12 +5,7 @@ function getBookApi() {
     console.log("Sending API get request..");  
     console.log("Query Type: " + qType);
     console.log("Query String: " + qString);
-
-    /*$.get("/api", {queryType: qType, queryString: qString}, function(data){
-        console.log("API query complete.");
-        console.log(data);
-        loadApiResults(data);
-    });*/
+    
     // API query
     var urlRequest = "https://www.googleapis.com/books/v1/volumes?q=" + qType + ":" + qString + "&key=AIzaSyBxBJ0t5Mb5ktVZY9Px5jYrZLJfrv9RXq8";
     console.log(urlRequest);
@@ -59,6 +54,7 @@ function updateBook(id){
 // loads the home screen
 function loadDefaults() {
     console.log("Loading Homepage..")
+    var type = "readlist";
 
     // Clean slate
     document.getElementById("bodyContainer").innerHTML = "";
@@ -94,8 +90,12 @@ function loadDefaults() {
             '       <button onclick="getAll()">View All</button>' +
             '   </div>' +
             '</div>' +
-            '<hr class="solid">';
-        // currently leading books
+            '<hr class="solid">';           
+            });
+
+    $.get("/getList", {type:type}, function(data){
+        console.log(data);
+
         document.getElementById('bodyContainer').innerHTML +=
             '<div class="libraryHeader">Currently Reading</div>' +
             '<div class="readingContainer">' +
@@ -106,8 +106,8 @@ function loadDefaults() {
             '           <div class="readingInfoAuth">Mark one as "Reading" to show here.</div>' +
             '       </div>'+
             '   </div>' +
-            '</div>';           
-            });
+            '</div>';
+    });
 }
 
 // loads the add book screen

@@ -65,30 +65,50 @@ function getBooks(type, query, callback) {
   callDatabase(sql, callback);
 }
 
+/***********************************************************
+ *  Function: UPDATEBOOK
+ *  Purpose: Updates book when saved, adjusts if the book is
+ *           marked as loaned or readlist.
+ **********************************************************/
 function updateBook(id, loaned, readlist, callback) {
   // DB Query
   var sql = "UPDATE book SET loaned = '" + loaned + "', readlist = '" + readlist + "' WHERE book_id = '" + id + "';";
 
   // Log and Send DB
   console.log("-Model-");
-  console.log("Updateing DB for ID: " + id);
+  console.log("Updating DB for ID: " + id);
   callDatabase(sql, callback);
 }
 
+/***********************************************************
+ *  Function: ADDLIST
+ *  Purpose: Gets books that match selected list type, be
+ *           it readlist or loaned.
+ **********************************************************/
 function getList(type, callback) {
   // DB Query
+  sql = "SELECT * book AS b INNER JOIN author AS a ON a.author_id = b.author_id WHERE b." + type + " = 'true';";
 
+  // Log and send to DB
+  console.log("-Model-");
+  console.log("Getting list for: " + type);
+  callDatabase(sql, callback);
 }
 
+/***********************************************************
+ *  Function: GETBYID
+ *  Purpose: Pulls book info by ID.
+ **********************************************************/
 function getById(id, callback) {
   // DB Query
-  let sql = "SELECT * FROM book AS b INNER JOIN author AS a ON a.author_id = b.author_id WHERE b.book_id = '" + id +"';"
+  let sql = "SELECT * FROM book AS b INNER JOIN author AS a ON a.author_id = b.author_id WHERE b.book_id = '" + id +"';";
 
   // Log and send select to DB
   console.log("-Model-");
   console.log("Search by ID: " + id);
   callDatabase(sql, callback);
 }
+
 /***********************************************************
  *  Function: ADDBOOKTODB
  *  Purpose: Adds selected book to database. First the author
@@ -179,5 +199,6 @@ module.exports = {
   getList: getList,
   addBookToDB: addBookToDB,
   getRecent: getRecent,
-  deleteBook: deleteBook
+  deleteBook: deleteBook,
+  updateBook:updateBook
 };
