@@ -46,7 +46,7 @@ function updateBook(id){
     var loaned = document.getElementById('loaned').checked;
     var readlist = document.getElementById('readlist').checked;
 
-    $.post("/updateBook", {id:id, loaned:loaned, readlist:readlist}, function(date){
+    $.post("/updateBook", {id:id, loaned:loaned, readlist:readlist}, function(data){
         console.log(data);
     });
 }
@@ -92,33 +92,29 @@ function loadDefaults() {
             '</div>' +
             '<hr class="solid">';
             
-        loadReadlist(type);
+            $.get("/getList", {type:type}, function(data){
+                console.log(data);
+                if(data.list.length === 0){
+                    document.getElementById('bodyContainer').innerHTML +=
+                        '<div class="libraryHeader">Currently Reading</div>' +
+                        '<div class="emptyContainer">' +
+                        '   <div class="emptyBook">' +
+                        '       <div class="emptyImage"><img src="/img/blank_cover.png"></div>' +
+                        '       <div class="emptyInfo">' +
+                        '           <div class="emptyInfoTitle">No Books Currently Being Read</div>' +
+                        '           <div class="emptyInfoAuth">Mark one as "Reading" to show here.</div>' +
+                        '       </div>'+
+                        '   </div>' +
+                        '</div>';
+                }
+                else if(data.list.length > 0){
+                    document.getElementById("bodyContainer").innerHTML += 
+                        '<div class="libraryHeader">Currently Reading</div>' +
+                        '<div id="readingContainer" class="readingContainer"></div>';
+                        formatBooks(data);
+                }
+            });
     });
-}
-
-function loadReadlist(type){
-    $.get("/getList", {type:type}, function(data){
-        console.log(data);
-        if(data.list.length === 0){
-            document.getElementById('bodyContainer').innerHTML +=
-                '<div class="libraryHeader">Currently Reading</div>' +
-                '<div class="emptyContainer">' +
-                '   <div class="emptyBook">' +
-                '       <div class="emptyImage"><img src="/img/blank_cover.png"></div>' +
-                '       <div class="emptyInfo">' +
-                '           <div class="emptyInfoTitle">No Books Currently Being Read</div>' +
-                '           <div class="emptyInfoAuth">Mark one as "Reading" to show here.</div>' +
-                '       </div>'+
-                '   </div>' +
-                '</div>';
-        }
-        else if(data.list.length > 0){
-            document.getElementById("bodyContainer").innerHTML += 
-                '<div class="libraryHeader">Currently Reading</div>' +
-                '<div id="readingContainer" class="readingContainer"></div>';
-                formatBooks(data);
-        }
-    }); 
 }
 
 function formatBooks(data){
