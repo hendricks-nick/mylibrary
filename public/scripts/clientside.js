@@ -265,15 +265,15 @@ function loadReadlist() {
                 '   <div class="emptyBook">' +
                 '       <div class="emptyImage"><img src="/img/blank_cover.png"></div>' +
                 '       <div class="emptyInfo">' +
-                '           <div class="emptyInfoTitle">No Books Currently Being Read</div>' +
-                '           <div class="emptyInfoAuth">Mark one as "Reading" to show here.</div>' +
+                '           <div class="emptyInfoTitle">No Books Currently On You ReadList</div>' +
+                    '           <div class="emptyInfoAuth">Mark one as "ReadList" to show here.</div>' +
                 '       </div>'+
                 '   </div>' +
                 '</div>';
         }
         else if(data.list.length > 0){
             body.innerHTML += 
-                '<div class="libraryHeader">Currently Reading</div>' +
+                '<div class="libraryHeader">Current ReadList</div>' +
                 '<div id="readingContainer" class="readingContainer"></div>';
                 formatBooks(data);
         }
