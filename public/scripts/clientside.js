@@ -65,23 +65,23 @@ function loadDefaults() {
 
     $.get("/getRecent", function(data){
         document.getElementById("bodyContainer").innerHTML += 
-            '<div class="recentHeader">Recent Added Books</div>' +
-            '<div id="recentContainer" class="recentContainer"></div>';
+            '<div class="libraryHeader">Recent Added Books</div>' +
+            '<div id="libraryContainer" class="libraryContainer"></div>';
                                                               
         // set number of books to display
         if (data.list.length === 1){
-            document.getElementById("recentContainer").style.gridTemplateColumns = "1fr";
+            document.getElementById("libraryContainer").style.gridTemplateColumns = "1fr";
         }
         else if (data.list.length === 2){
-            document.getElementById("recentContainer").style.gridTemplateColumns = "1fr 1fr";
+            document.getElementById("libraryContainer").style.gridTemplateColumns = "1fr 1fr";
         }
         else if (data.list.length === 3){
-            document.getElementById("recentContainer").style.gridTemplateColumns = "1fr 1fr 1fr";
+            document.getElementById("libraryContainer").style.gridTemplateColumns = "1fr 1fr 1fr";
         }
 
         for (var i = 0; i < data.list.length; i++){
-            document.getElementById("recentContainer").innerHTML += 
-                '<div class="recBook">' +
+            document.getElementById("libraryContainer").innerHTML += 
+                '<div class="libraryBook">' +
                 '   <div><img src="' + data.list[i].cover_url + '" alt="book cover" onclick="loadBook(' + data.list[i].book_id + ')"></div>' +
                 '   <div>' + data.list[i].title + '</div>' +
                 '   <div>' + data.list[i].name + '</div>' +
@@ -97,7 +97,7 @@ function loadDefaults() {
             '<hr class="solid">';
         // currently leading books
         document.getElementById('bodyContainer').innerHTML +=
-            '<div class="recentHeader">Currently Reading</div>' +
+            '<div class="libraryHeader">Currently Reading</div>' +
             '<div class="readingContainer">' +
             '   <div class="readingBook">' +
             '       <div class="readingImage"><img src="/img/blank_cover.png"></div>' +
@@ -145,23 +145,23 @@ function getAll(){
 
         document.getElementById("bodyContainer").innerHTML = "";
         document.getElementById("bodyContainer").innerHTML += 
-            '<div class="recentHeader">Current Library</div>' +
-            '<div id="recentContainer" class="recentContainer"></div>';
+            '<div class="libraryHeader">Current Library</div>' +
+            '<div id="libraryContainer" class="libraryContainer"></div>';
                                                               
         // set number of books to display
         if (data.list.length === 1){
-            document.getElementById("recentContainer").style.gridTemplateColumns = "1fr";
+            document.getElementById("libraryContainer").style.gridTemplateColumns = "1fr";
         }
         else if (data.list.length === 2){
-            document.getElementById("recentContainer").style.gridTemplateColumns = "1fr 1fr";
+            document.getElementById("libraryContainer").style.gridTemplateColumns = "1fr 1fr";
         }
         else if (data.list.length === 3){
-            document.getElementById("recentContainer").style.gridTemplateColumns = "1fr 1fr 1fr";
+            document.getElementById("libraryContainer").style.gridTemplateColumns = "1fr 1fr 1fr";
         }
 
         for (var i = 0; i < data.list.length; i++){
-            document.getElementById("recentContainer").innerHTML += 
-                '<div class="recBook">' +
+            document.getElementById("libraryContainer").innerHTML += 
+                '<div class="libraryBook">' +
                 '   <div><img src="' + data.list[i].cover_url + '" alt="book cover" onclick="loadBook(' + data.list[i].book_id + ')"></div>' +
                 '   <div>' + data.list[i].title + '</div>' +
                 '   <div>' + data.list[i].name + '</div>' +
@@ -241,23 +241,23 @@ function loadSearch() {
         
         document.getElementById("bodyContainer").innerHTML = "";
         document.getElementById("bodyContainer").innerHTML += 
-            '<div class="recentHeader">Current Library</div>' +
-            '<div id="recentContainer" class="recentContainer"></div>';
+            '<div class="libraryHeader">Search Results</div>' +
+            '<div id="libraryContainer" class="libraryContainer"></div>';
                                                               
         // set number of books to display, default 4 wide
         if (data.list.length === 1){
-            document.getElementById("recentContainer").style.gridTemplateColumns = "1fr";
+            document.getElementById("libraryContainer").style.gridTemplateColumns = "1fr";
         }
         else if (data.list.length === 2){
-            document.getElementById("recentContainer").style.gridTemplateColumns = "1fr 1fr";
+            document.getElementById("libraryContainer").style.gridTemplateColumns = "1fr 1fr";
         }
         else if (data.list.length === 3){
-            document.getElementById("recentContainer").style.gridTemplateColumns = "1fr 1fr 1fr";
+            document.getElementById("libraryContainer").style.gridTemplateColumns = "1fr 1fr 1fr";
         }
 
         for (var i = 0; i < data.list.length; i++){
-            document.getElementById("recentContainer").innerHTML += 
-                '<div class="recBook">' +
+            document.getElementById("libraryContainer").innerHTML += 
+                '<div class="libraryBook">' +
                 '   <div><img src="' + data.list[i].cover_url + '" alt="book cover" onclick="loadBook(' + data.list[i].book_id + ')"></div>' +
                 '   <div>' + data.list[i].title + '</div>' +
                 '   <div>' + data.list[i].name + '</div>' +

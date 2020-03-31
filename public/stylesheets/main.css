@@ -147,7 +147,7 @@ hr.solid {
   border-bottom: none;
   margin: 0;
 }
-.recentContainer{
+.libraryContainer{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: auto;
@@ -156,13 +156,13 @@ hr.solid {
   padding-right: 130px;
   
 }
-.recBook {
+.libraryBook {
   display: grid;
   justify-content: center;
   text-align: center;
 }
 
-.recBook img{
+.libraryBook img{
   width: 174px;
   height: 261px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -188,7 +188,7 @@ hr.solid {
   border: 1px solid rgb(194, 91, 23);
 }
 
-.recentHeader{
+.libraryHeader{
   text-align: center;
   font-size: 35px;
   font-family: 'Oswald', sans-serif;
