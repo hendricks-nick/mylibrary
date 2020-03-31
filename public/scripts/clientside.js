@@ -240,12 +240,11 @@ function loadBook(id) {
             '       <button class="saveButton" onclick="updateBook(' + id + ')">Save</button>' +
             '   </div>' +
             '</div>';
+
             if (data.list[0].loaned === true){
-                console.log("loaned true");
                 document.getElementById("loaned").checked = true;
             }
             if (data.list[0].readlist === true){
-                console.log("readlist true");
                 document.getElementById("readlist").checked = true;
             }
     });
@@ -253,7 +252,32 @@ function loadBook(id) {
 
 // loads the readlist
 function loadReadlist() {
+    let body = document.getElementById('bodyContainer');
+    var type = 'readlist';
+    body.innerHTML = '';
 
+    $.get("/getList", {type:type}, function(data){
+        console.log(data);
+        if(data.list.length === 0){
+            body.innerHTML +=
+                '<div class="libraryHeader">Currently Readlist</div>' +
+                '<div class="emptyContainer">' +
+                '   <div class="emptyBook">' +
+                '       <div class="emptyImage"><img src="/img/blank_cover.png"></div>' +
+                '       <div class="emptyInfo">' +
+                '           <div class="emptyInfoTitle">No Books Currently Being Read</div>' +
+                '           <div class="emptyInfoAuth">Mark one as "Reading" to show here.</div>' +
+                '       </div>'+
+                '   </div>' +
+                '</div>';
+        }
+        else if(data.list.length > 0){
+            body.innerHTML += 
+                '<div class="libraryHeader">Currently Reading</div>' +
+                '<div id="readingContainer" class="readingContainer"></div>';
+                formatBooks(data);
+        }
+    });
 }
 
 // loads search results
