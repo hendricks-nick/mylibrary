@@ -706,6 +706,7 @@ background-color: rgb(194, 91, 23);
     padding-top: 15px;
   }
   .sBookDesc{
+    padding-top: 15px;
     padding-left: 20px;
     padding-right: 20px;
     text-align: justify !important;
