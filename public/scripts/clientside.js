@@ -103,7 +103,7 @@ function loadDefaults() {
                     '   <div class="emptyBook">' +
                     '       <div class="emptyImage"><img src="/img/blank_cover.png"></div>' +
                     '       <div class="emptyInfo">' +
-                    '           <div class="emptyInfoTitle">No Books Currently On You ReadList</div>' +
+                    '           <div class="emptyInfoTitle">No Books Currently On Your ReadList</div>' +
                     '           <div class="emptyInfoAuth">Mark one as "ReadList" to show here.</div>' +
                     '       </div>'+
                     '   </div>' +
@@ -251,7 +251,7 @@ function loadBook(id) {
 }
 
 // loads the readlist
-function loadReadlist() {
+function loadReadlist() {    
     let body = document.getElementById('bodyContainer');
     var type = 'readlist';
     body.innerHTML = '';
@@ -265,7 +265,7 @@ function loadReadlist() {
                 '   <div class="emptyBook">' +
                 '       <div class="emptyImage"><img src="/img/blank_cover.png"></div>' +
                 '       <div class="emptyInfo">' +
-                '           <div class="emptyInfoTitle">No Books Currently On You ReadList</div>' +
+                '           <div class="emptyInfoTitle">No Books Currently On Your ReadList</div>' +
                     '           <div class="emptyInfoAuth">Mark one as "ReadList" to show here.</div>' +
                 '       </div>'+
                 '   </div>' +
@@ -322,7 +322,32 @@ function loadSearch() {
 
 // loads list of loaned books
 function loadLoaned(){
+    let body = document.getElementById('bodyContainer');
+    var type = 'loaned';
+    body.innerHTML = '';
 
+    $.get("/getList", {type:type}, function(data){
+        console.log(data);
+        if(data.list.length === 0){
+            body.innerHTML +=
+                '<div class="libraryHeader">Currently Loaned</div>' +
+                '<div class="emptyContainer">' +
+                '   <div class="emptyBook">' +
+                '       <div class="emptyImage"><img src="/img/blank_cover.png"></div>' +
+                '       <div class="emptyInfo">' +
+                '           <div class="emptyInfoTitle">All Books Are Accounted For</div>' +
+                    '           <div class="emptyInfoAuth">Mark one as "Loaned" if that changes.</div>' +
+                '       </div>'+
+                '   </div>' +
+                '</div>';
+        }
+        else if(data.list.length > 0){
+            body.innerHTML += 
+                '<div class="libraryHeader">Current ReadList</div>' +
+                '<div id="readingContainer" class="readingContainer"></div>';
+                formatBooks(data);
+        }
+    });
 }
 
 function deleteBook(id, title, author){
