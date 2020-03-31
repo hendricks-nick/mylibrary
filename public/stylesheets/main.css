@@ -617,11 +617,16 @@ background-color: rgb(194, 91, 23);
   .navContainer{
     grid-template-columns: 20% 20% 20% 20% 20%;
     grid-template-areas: 
-      "banner banner banner banner banner"
+      "logo banner banner banner banner"
       "add search search search search";
   }
   .bannerContainer{
     grid-area: banner;
+  }
+  .bannerContainer img{
+    width: 100%;
+    height: auto;
+    padding-left: 15px;
   }
   .addContainer{
     grid-area: add;
@@ -638,14 +643,13 @@ background-color: rgb(194, 91, 23);
     padding-right: 0px;
   }
   .logoContainer{
-    visibility: hidden;
-    height: 0px;
+    grid-area: logo;
   }
-  .bannerContainer img{
+  .logoContainer img{
     width: 100%;
     height: auto;
-    padding-left: 15px;
   }
+
   .footerContainer{
     height: 4.5rem;
   }
