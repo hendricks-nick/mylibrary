@@ -240,16 +240,15 @@ function loadBook(id) {
             '       <button class="saveButton" onclick="updateBook(' + id + ')">Save</button>' +
             '   </div>' +
             '</div>';
-
             if (data.list[0].loaned === 'true'){
+                console.log("loaned true");
                 document.getElementById("loaned").checked = true;
             }
             if (data.list[0].readlist === 'true'){
+                console.log("readlist true");
                 document.getElementById("readlist").checked = true;
             }
     });
-
-}
 
 // loads the readlist
 function loadReadlist() {
