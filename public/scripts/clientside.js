@@ -231,6 +231,11 @@ function loadSearch() {
     var sType = searchType;
     var sString = document.getElementById("searchInput").value;
 
+    // Reset Search Bar
+    document.getElementById(searchType + "Btn").style.backgroundColor = "#DF691A";
+    document.getElementById("searchInput").setAttribute('value', '');
+    searchType = 'title';
+
     $.get("/searchDB", {sType:sType, sString:sString}, function(data){
         console.log(data);
         
