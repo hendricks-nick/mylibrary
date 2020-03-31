@@ -129,7 +129,7 @@ function formatBooks(data){
         document.getElementById("readingContainer").style.gridTemplateColumns = "1fr 1fr 1fr";
     }
 
-    for (var i = 0; i < data.list.length || i < 4; i++){
+    for (var i = 0; i < data.list.length && i < 4; i++){
         document.getElementById("readingContainer").innerHTML += 
             '<div class="libraryBook">' +
             '   <div><img src="' + data.list[i].cover_url + '" alt="book cover" onclick="loadBook(' + data.list[i].book_id + ')"></div>' +
