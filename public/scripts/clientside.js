@@ -467,7 +467,7 @@ function loadApiResults(results) {
             '   <div class="rightBookContainer">' +
             '       <div class="bookAddTitle"><div>' + bookName + '</div></div>' +
             '       <div class="bookAddAuthor"><div>' + bookAuthor + '</div></div>' +
-            '       <div class="bookAddDes"><div>' + bookDescription + '</div></div>' +
+            '       <div class="bookAddDesc"><div>' + bookDescription + '</div></div>' +
             '   </div>' +
             '</div>';
     }
