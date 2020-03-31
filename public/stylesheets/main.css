@@ -612,9 +612,10 @@ background-color: rgb(194, 91, 23);
     width: 100%;
   }
   .pageContainer{
-    padding-bottom: 4.5rem;
+    padding-bottom: 54px;
   }
   .navContainer{
+    padding-top: 8px;
     grid-template-columns: 20% 20% 20% 20% 20%;
     grid-template-areas: 
       "logo banner banner banner banner"
@@ -651,7 +652,7 @@ background-color: rgb(194, 91, 23);
   }
 
   .footerContainer{
-    height: 4.5rem;
+    height: 50px;
   }
   .footerLinks{
     padding: 0;
