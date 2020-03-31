@@ -5,7 +5,7 @@ function getBookApi() {
     console.log("Sending API get request..");  
     console.log("Query Type: " + qType);
     console.log("Query String: " + qString);
-    
+
     // API query
     var urlRequest = "https://www.googleapis.com/books/v1/volumes?q=" + qType + ":" + qString + "&key=AIzaSyBxBJ0t5Mb5ktVZY9Px5jYrZLJfrv9RXq8";
     console.log(urlRequest);
@@ -90,23 +90,22 @@ function loadDefaults() {
             '       <button onclick="getAll()">View All</button>' +
             '   </div>' +
             '</div>' +
-            '<hr class="solid">';           
-            });
-
-    $.get("/getList", {type:type}, function(data){
-        console.log(data);
-
-        document.getElementById('bodyContainer').innerHTML +=
-            '<div class="libraryHeader">Currently Reading</div>' +
-            '<div class="readingContainer">' +
-            '   <div class="readingBook">' +
-            '       <div class="readingImage"><img src="/img/blank_cover.png"></div>' +
-            '       <div class="readingInfo">' +
-            '           <div class="readingInfoTitle">No Books Currently Being Read</div>' +
-            '           <div class="readingInfoAuth">Mark one as "Reading" to show here.</div>' +
-            '       </div>'+
-            '   </div>' +
-            '</div>';
+            '<hr class="solid">';
+        $.get("/getList", {type:type}, function(data){
+            console.log(data);
+    
+            document.getElementById('bodyContainer').innerHTML +=
+                '<div class="libraryHeader">Currently Reading</div>' +
+                '<div class="readingContainer">' +
+                '   <div class="readingBook">' +
+                '       <div class="readingImage"><img src="/img/blank_cover.png"></div>' +
+                '       <div class="readingInfo">' +
+                '           <div class="readingInfoTitle">No Books Currently Being Read</div>' +
+                '           <div class="readingInfoAuth">Mark one as "Reading" to show here.</div>' +
+                '       </div>'+
+                '   </div>' +
+                '</div>';
+        });         
     });
 }
 
