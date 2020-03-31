@@ -667,4 +667,7 @@ background-color: rgb(194, 91, 23);
   .emptyBook{
     grid-template-columns: 1fr;
   }
+  .emptyImage{
+    justify-content: center;
+  }
 }
