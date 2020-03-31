@@ -670,4 +670,7 @@ background-color: rgb(194, 91, 23);
   .emptyImage{
     justify-content: center;
   }
+  .addPageContainer{
+    padding: 0;
+  }
 }
