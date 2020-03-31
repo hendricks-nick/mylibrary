@@ -356,7 +356,7 @@ background-color: rgb(194, 91, 23);
 .addSearchButton{
   align-content: center;
   height: 45px;
-  width: 33.333%;
+  width: 50%;
   padding: 10px;
   background-color: #2B3E50;
   color: white;
@@ -426,6 +426,10 @@ background-color: rgb(194, 91, 23);
 
 .addBookBtn button:hover{
   background-color: rgb(194, 91, 23);
+}
+.addBookSearch{
+  display: flex;
+  justify-content: center;
 }
 
 .bookAddTitle{
