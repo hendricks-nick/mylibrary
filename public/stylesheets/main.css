@@ -198,6 +198,11 @@ hr.solid {
   border: 1px solid rgb(194, 91, 23);
 }
 
+
+.linkBox button:hover{
+background-color: rgb(194, 91, 23);
+}
+
 .libraryHeader{
   text-align: center;
   font-size: 35px;
