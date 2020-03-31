@@ -647,4 +647,7 @@ background-color: rgb(194, 91, 23);
   .footerLinks{
     padding: 0px;
   }
+  .footerLinks button{
+    height: 100%;
+  }
 }
