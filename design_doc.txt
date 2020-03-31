@@ -9,26 +9,10 @@ isbn test list
 #2B3E50; background
 
 todo:
-api queries with multiple author name,or title words require some scrubbing. 
-example - query is lord of the rings, it need to structured as:
-q=intitle:lord+intitle:of+intitle:the+intitle:rings
+API results:
+-handle API results not having thumbnail
+-limit api results displayed (25?)
+-multi add option from results page
+-track page count (use on dashboard to track average number of pages read per day/week/month for the whole year even)
 
-need a function to handle that. lower vs uppercase doesn't matter.
-
-need an error handling option as well for not existant request, example isbn:1234
-
-finish add a book options and formatting
-
-start book search feature
-
-
- <div class="dltBtnsRow">' +
-        '       <div class="dltBtnsBox">' +
-        '           <div class="dltBtn">' +
-        '               <button onclick="confirmDelete(' + id + ')">Delete Book</button>' +
-        '           </div>' +
-        '           <div class="dltBtn">' +
-        '               <button onclick="loadBook(' + id + ')">Return to Book</button>' +
-        '           </div>' +
-        '       </div>' +
-        '   </div>' +
+Dashboard:
