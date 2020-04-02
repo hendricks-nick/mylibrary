@@ -19,7 +19,10 @@ app.get("/auth_config.json", (req, res) => {
   });
 
 // Express routing for pages requests
-app.get("/", invController.getDefault);
+app.get("/", (_, res) => {
+    res.sendFile(join(__dirname, "index.html"));
+  });
+app.get("/home", invController.getDefault);
 app.get("/searchDB", invController.searchDB);
 app.get("/getRecent", invController.getRecent);
 app.get("/getList", invController.getList);
